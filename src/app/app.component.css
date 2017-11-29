@@ -1,5 +1,9 @@
 mat-toolbar {
   background-color: blue;
+  color: white;
+}
+mat-grid-tile {
+  background-color: aqua;
 }
 
 .spacer {

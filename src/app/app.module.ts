@@ -1,23 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatListModule, MatToolbarModule, MatGridListModule } from '@angular/material';
-//import { SearchSettingComponent } from './searchSetting.component';
-//import { SearchListComponent } from './searchList.component';
-//import { JoinListComponent } from './joinList.component';
+import { MatListModule, MatToolbarModule, MatGridListModule, MatInputModule, MatFormFieldModule,
+  MatSelectModule, MatOptionModule } from '@angular/material';
+import { SettingComponent } from './settingComponent/setting.component';
+import { SearchComponent } from './searchComponent/search.component';
 import { ChattingComponent } from './chatting.component';
 import { AppComponent } from './app.component';
 
-//import { SocketIoModule, SocketIoConfig } from 'ng2-socket-io';
-
-//const config: SocketIoConfig = { url: 'http://localhost:4200', options: {} };
-
 @NgModule({
   declarations: [
-    AppComponent, ChattingComponent
+    AppComponent, ChattingComponent, SettingComponent, SearchComponent
   ],
   imports: [
-    BrowserModule, MatListModule, MatToolbarModule, MatGridListModule,
-    //SocketIoModule.forRoot(config)
+    BrowserModule, MatListModule, MatToolbarModule, MatGridListModule, MatInputModule,
+    MatFormFieldModule, MatSelectModule, MatOptionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
