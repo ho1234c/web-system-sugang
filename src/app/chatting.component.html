@@ -1,0 +1,9 @@
+<div>
+  <mat-list id="chatlog">
+  </mat-list>
+  <form onsubmit="return false;">
+    <input #messagebox id="chatmsg" autocomplete="off" (keyup)="sendMessageOnEnter($event, messagebox)" value=""
+           autofocus required/>
+  </form>
+</div>
+
