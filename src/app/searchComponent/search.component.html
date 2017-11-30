@@ -1,0 +1,18 @@
+<mat-list>
+  <mat-list-item *ngFor="let Course of searchList" style="display: inline;">
+    <span>{{Course.code}}</span>
+    <span class="spacer"></span>
+    <span>{{Course.courseName}}</span>
+    <span class="spacer"></span>
+    <span>{{Course.credit}}</span>
+    <span class="spacer"></span>
+    <span>{{Course.classTime}}</span>
+    <span class="spacer"></span>
+    <span>{{Course.instructor}}</span>
+    <span class="spacer"></span>
+    <span>{{Course.seats}}</span>
+    <span class="spacer"></span>
+    <span>{{Course.major}}</span>
+    <input type="button" value="신청" (click)="register(Course)">
+  </mat-list-item>
+</mat-list>

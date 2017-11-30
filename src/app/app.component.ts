@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  name = '정의원';
+  department = '소프트웨어';
+  grade = 3;
+  maxPoint = 21;
 }
