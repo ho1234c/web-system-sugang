@@ -2,10 +2,30 @@
 const express = require('express');
 const path = require('path');
 const http = require('http');
+const logger = require('morgan');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+
+// Set about sesstion
+const passport = require('passport');
+const session = require('express-session');
+
+// connect MongoDB
+const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
+const autoIncrement = require('mongoose-auto-increment');
+
+const db = mongoose.connection;
+db.on('error', console.error);
+db.once('open', function(){
+    console.log('mongodb connect');
+});
+
+const connect = mongoose.connect('mongodb://127.0.0.1:27017/websystem', { useMongoClient: true });
+autoIncrement.initialize(connect);
 
 // Get our API routes
-const api = require('./routes/api');
+const api = require('./server/route/api');
 
 const app = express();
 
