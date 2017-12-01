@@ -1,5 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import { Injectable } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import * as io from 'socket.io-client';
 
 const maxmsg = 6;
@@ -9,7 +8,6 @@ const maxmsg = 6;
   templateUrl: './chatting.component.html'
 })
 
-@Injectable()
 export class ChattingComponent implements OnInit {
   url = 'http://localhost:3000';
   socket = io(this.url);
@@ -26,13 +24,15 @@ export class ChattingComponent implements OnInit {
     }
   }
 
-  sendMessage(data) {
-    this.socket.emit('message', data)
+  sendMessage(msg) {
+    this.addMessage(msg);
+    this.socket.emit('message', msg);
     }
 
   sendMessageOnEnter($event, messagebox) {
     if ($event.which === 13) {
       this.sendMessage(messagebox);
+      messagebox.value = '';
     }
   }
 

@@ -60,11 +60,11 @@ const server = http.createServer(app);
  */
 server.listen(port, () => console.log(`API running on localhost:${port}`));
 
-app.io = require('socket.io');
+app.io = require('socket.io')(server);
 
 app.io.on('connection', function (socket) {
-  app.io.emit('broadcast', "Client is connected");
   console.log("Client is connected");
+  app.io.emit('broadcast', "Client is connected");
 
   socket.on('message', function (msg) {
     app.io.emit('broadcast', msg);
@@ -75,5 +75,4 @@ app.io.on('connection', function (socket) {
     app.io.emit('broadcast', "Client is disconnected");
     console.log("Client is disconnected");
   })
-
 });
