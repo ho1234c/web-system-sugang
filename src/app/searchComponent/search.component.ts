@@ -9,6 +9,7 @@ import {Input} from '@angular/compiler/src/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
+
   //검색결과를 display
   searchList = CourseSet; //검색 결과 list
   @ViewChild('form') myform;
