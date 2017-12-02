@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import { Injectable } from '@angular/core';
-//import { Socket } from 'ng2-socket-io';
+import * as io from 'socket.io-client';
 
 const maxmsg = 6;
 
@@ -11,8 +11,14 @@ const maxmsg = 6;
 
 @Injectable()
 export class ChattingComponent implements OnInit {
+  url = 'http://localhost:3000';
+  socket = io(this.url);
 
-  //constructor(private socket: Socket) {}
+  constructor() {
+    this.socket.on('broadcast', function (msg) {
+      this.addMessage(msg);
+    });
+  }
 
   ngOnInit() {
     for (let i = 0; i < maxmsg; i++) {
@@ -21,7 +27,7 @@ export class ChattingComponent implements OnInit {
   }
 
   sendMessage(data) {
-    this.addMessage(data.value);
+    this.socket.emit('message', data)
     }
 
   sendMessageOnEnter($event, messagebox) {

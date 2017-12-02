@@ -1,9 +1,12 @@
 export class Course {
-  code: number;
+  subjectId: number;
   seats: number;
   credit: number;
-  courseName: string;
-  classTime: string;
-  instructor: string;
+  time: number;
+  name: string;
+  lectureTime: string;
+  lectureRoom: string
+  professor: string;
   major: string;
+  IsCyber: boolean;
 }

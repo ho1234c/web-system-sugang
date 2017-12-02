@@ -60,3 +60,21 @@ const server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 server.listen(port, () => console.log(`API running on localhost:${port}`));
+
+app.io = require('socket.io');
+
+app.io.on('connection', function (socket) {
+  app.io.emit('broadcast', "Client is connected");
+  console.log("Client is connected");
+
+  socket.on('message', function (msg) {
+    app.io.emit('broadcast', msg);
+    console.log(msg);
+  });
+
+  socket.on('disconnect', function () {
+    app.io.emit('broadcast', "Client is disconnected");
+    console.log("Client is disconnected");
+  })
+
+});
