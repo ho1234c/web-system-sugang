@@ -24,9 +24,6 @@ db.once('open', function(){
 const connect = mongoose.connect('mongodb://127.0.0.1:27017/websystem', { useMongoClient: true });
 autoIncrement.initialize(connect);
 
-// Get our API routes
-const api = require('./server/route/api');
-
 const app = express();
 
 // Parsers for POST data
@@ -37,7 +34,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // Set our api routes
-app.use('/api', api);
+const user = require('./server/router/user');
+const subject = require('./server/router/subject');
+
+app.use('/api/user', user);
+app.use('/api/user', subject);
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {

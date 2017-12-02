@@ -15,5 +15,5 @@ const SubjectSchema = new Schema({
   created_at: { type: Date, default: Date.now() }
 });
 
-UserSchema.plugin(autoIncrement.plugin, 'Subject');
+SubjectSchema.plugin(autoIncrement.plugin, 'Subject');
 module.exports = mongoose.model('Subject', SubjectSchema);
