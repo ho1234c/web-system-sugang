@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CourseSet } from './mock.course';
+import { CourseSet } from '../mock.course';
 
 @Component({
   selector: 'app-setting',
