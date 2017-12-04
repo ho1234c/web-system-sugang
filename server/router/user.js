@@ -4,12 +4,14 @@ const User = require('../models/User');
 const passwordHash = require('../lib/passwordHash');
 
 router.post('/create', (req, res, next) => {
-  const User = new User({
-    username: req.body.username,
+  const user = new User({
+    email: req.body.email,
     password: passwordHash(req.body.password),
-    displayname: req.body.displayname
+    displayName: req.body.displayName
   });
-  User.save(err => {
+
+  user.save(err => {
+    if(err) console.log(err);
     res.send('success');
   });
 });
@@ -24,7 +26,7 @@ router.post('/login', (req, res, next) => {
     }
     const userData = {
       email: user.email,
-      displayname: user.displayname,
+      displayName: user.displayName,
     };
 
     return req.logIn(userData, err => {
