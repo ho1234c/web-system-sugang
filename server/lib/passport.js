@@ -8,11 +8,11 @@ module.exports = app => {
   app.use(passport.session());
 
   passport.use(new LocalStrategy({
-    emailField: 'email',
+    usernameField: 'email',
     passwordField: 'password'
   },
     (email, password, done) => {
-      User.findOne({ email: username, password: passwordHash(password) }, (err, user) => {
+      User.findOne({ email: email, password: passwordHash(password) }, (err, user) => {
         if (!user) {
           return done(null, false, { message: '아이디 또는 비밀번호 오류 입니다.' });
         } else {
