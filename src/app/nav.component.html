@@ -1,30 +1,36 @@
 <header>
     <nav>
-        <div fxFlex fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
-            <div fxFlex="50">
-              <button mat-raised-button routerLink="main"> Main </button>
-              <button mat-raised-button routerLink="table" > Time Table </button>
+        <div fxLayout="row" fxLayoutAlign="start center" class="content">
+            <div fxFlex="20%">
+              <img src="../assets/intro_ajou_symbol.png" height="50" width="50"/>
+              <!--<button mat-raised-button routerLink="main"> Main </button>-->
+              <!--<button mat-raised-button routerLink="table" > Time Table </button>-->
+              <a mat-raised-button routerLink="main"> Main </a>
+              <a mat-raised-button routerLink="table"> Time Table </a>
             </div>
-            <div fxFlex class="text-right">
+
+            <div fxFlex="60%">
+              <span>이름 : {{name}} </span>
+              <span class="spacer"></span>
+              <span>학과 : {{department}} </span>
+              <span class="spacer"></span>
+              <span>학년 : {{grade}}학년</span>
+              <span class="spacer"></span>
+              <span>최대신청학점 : {{maxPoint}}</span>
+            </div>
+
+            <div fxFlex>
                 <button mat-icon-button [matMenuTriggerFor]="matmenu">
                     <mat-icon>public</mat-icon>
                 </button>
                 <mat-menu #matmenu="matMenu">
                     <button mat-menu-item>
                         <mat-icon>flag</mat-icon>
-                        <span>  English </span>
-                    </button>
-                    <button mat-menu-item>
-                        <mat-icon>flag</mat-icon>
-                        <span>   Español  </span>
-                    </button>
-                    <button mat-menu-item>
-                        <mat-icon>flag</mat-icon>
-                        <span>    Português </span>
+                        <span>  LogOut </span>
                     </button>
                 </mat-menu>
-
             </div>
+
         </div>
     </nav>
 </header>

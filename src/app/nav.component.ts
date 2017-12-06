@@ -14,8 +14,9 @@ export class NavComponent {
   menuItems: any[];
   progressBarMode: string;
 
-
-  constructor() {
-  }
+  name = '정의원';
+  department = '소프트웨어';
+  grade = 3;
+  maxPoint = 21;
 
 }
