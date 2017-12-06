@@ -36,18 +36,6 @@
       <mat-cell *matCellDef="let element"> {{element.friday}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="saturday">
-      <mat-header-cell *matHeaderCellDef> 토 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.saturday}} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="sunday">
-      <mat-header-cell *matHeaderCellDef> 일 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.sunday}} </mat-cell>
-    </ng-container>
-
-
-
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
