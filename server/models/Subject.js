@@ -13,6 +13,7 @@ const SubjectSchema = new Schema({
   lectureRoom: String,
   isCyber: { type: Boolean, default: false },
   created_at: { type: Date, default: Date.now() }
+  seats: { type: Number, required: true }
 });
 
 UserSchema.plugin(autoIncrement.plugin, 'Subject');

@@ -16,6 +16,7 @@ export class ChattingComponent implements OnInit {
     this.socket.on('broadcast', function (msg) {
       this.addMessage(msg);
     });
+    console.log(this.url);
   }
 
   ngOnInit() {
@@ -25,8 +26,7 @@ export class ChattingComponent implements OnInit {
   }
 
   sendMessage(msg) {
-    this.addMessage(msg);
-    this.socket.emit('message', msg);
+    this.socket.emit('message', msg.value);
     }
 
   sendMessageOnEnter($event, messagebox) {

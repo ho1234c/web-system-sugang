@@ -1,6 +1,7 @@
-<mat-list>
-  <mat-list-item *ngFor="let Course of courseList" style="display: inline;">
-    <span>{{Course.code}}</span>
-    <span>과목</span>
-  </mat-list-item>
-</mat-list>
+<mat-form-field>
+  <mat-select placeholder="학과">
+    <mat-option *ngFor="let major of majorName" [value]="selected">
+      {{ major }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
