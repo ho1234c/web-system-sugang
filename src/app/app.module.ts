@@ -19,6 +19,7 @@ import { NavComponent } from './nav.component';
 import { MainComponent} from './main.component';
 import { TableComponent} from './table.component';
 
+import { JoinComponent } from './joinComponent/join.component';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing } from './app.routes';
@@ -26,7 +27,7 @@ import {CdkTableModule} from '@angular/cdk/table';
 
 @NgModule({
   declarations: [
-    AppComponent, ChattingComponent, SettingComponent, SearchComponent,
+    AppComponent, ChattingComponent, SettingComponent, SearchComponent, JoinComponent,
     // MaterialModule,
     NavComponent, MainComponent, TableComponent
   ],
