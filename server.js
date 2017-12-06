@@ -6,7 +6,6 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
-// Set about sesstion
 const passport = require('passport');
 const session = require('express-session');
 
@@ -24,55 +23,61 @@ db.once('open', function(){
 const connect = mongoose.connect('mongodb://127.0.0.1:27017/websystem', { useMongoClient: true });
 autoIncrement.initialize(connect);
 
-// Get our API routes
-const api = require('./server/route/api');
-
 const app = express();
 
-// Parsers for POST data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
 
-// Point static path to dist
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// Set our api routes
-app.use('/api', api);
+const connectMongo = require('connect-mongo');
+const MongoStore = connectMongo(session);
+
+const sessionMiddleWare = session({
+    secret: 'jongho',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      maxAge: 2000 * 60 * 60
+    },
+    store: new MongoStore({
+        mongooseConnection: mongoose.connection,
+        ttl: 14 * 24 * 60 * 60
+    })
+});
+
+app.use(sessionMiddleWare);
+
+// passport
+const passportConfig = require('./server/lib/passport');
+
+passportConfig(app);
+
+// Set api routes
+const user = require('./server/router/user');
+const subject = require('./server/router/subject');
+
+app.use('/api/user', user);
+app.use('/api/subject', subject);
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
-/**
- * Get port from environment and store in Express.
- */
 const port = process.env.PORT || '3000';
 app.set('port', port);
 
-/**
- * Create HTTP server.
- */
 const server = http.createServer(app);
 
-/**
- * Listen on provided port, on all network interfaces.
- */
 server.listen(port, () => console.log(`API running on localhost:${port}`));
 
-app.io = require('socket.io')(server);
+const listen = require('socket.io');
+const io = listen(server);
 
-app.io.on('connection', function (socket) {
-  console.log("Client is connected");
-  app.io.emit('broadcast', "Client is connected");
-
-  socket.on('message', function (msg) {
-    app.io.emit('broadcast', msg);
-    console.log(msg);
-  });
-
-  socket.on('disconnect', function () {
-    app.io.emit('broadcast', "Client is disconnected");
-    console.log("Client is disconnected");
-  })
+io.use((socket, next) => {
+  sessionMiddleWare(socket.request, socket.request.res, next);
 });
+
+require('./server/lib/socket')(io);

@@ -5,7 +5,7 @@ const autoIncrement = require('mongoose-auto-increment');
 const UserSchema = new Schema({
   email: { type: String, required: [true, 'email is require'] },
   password: { type: String, required: [true, 'password is require'] },
-  displayname: String,
+  displayName: String,
   created_at: { type: Date, default: Date.now() }
 });
 

@@ -1,19 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatListModule, MatToolbarModule, MatGridListModule, MatInputModule, MatFormFieldModule,
-  MatSelectModule, MatOptionModule } from '@angular/material';
+  MatSelectModule, MatOptionModule, MatButtonModule, MatIconModule, MatMenuModule,
+  MatAutocompleteModule, MatCardModule, MatDialogModule, MatProgressBarModule, MatProgressSpinnerModule, MatSliderModule,
+  MatSnackBarModule, MatTooltipModule } from '@angular/material';
+// import {MaterialModule} from './material.module';
 import { SettingComponent } from './settingComponent/setting.component';
 import { SearchComponent } from './searchComponent/search.component';
 import { ChattingComponent } from './chatting.component';
 import { AppComponent } from './app.component';
+import { NavComponent } from './nav.component';
+import { MainComponent} from './main.component';
+import { TableComponent} from './table.component';
+
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { routing } from './app.routes';
 
 @NgModule({
   declarations: [
-    AppComponent, ChattingComponent, SettingComponent, SearchComponent
+    AppComponent, ChattingComponent, SettingComponent, SearchComponent,
+    // MaterialModule,
+    NavComponent, MainComponent, TableComponent
   ],
   imports: [
-    BrowserModule, MatListModule, MatToolbarModule, MatGridListModule, MatInputModule,
-    MatFormFieldModule, MatSelectModule, MatOptionModule
+    BrowserModule,  FormsModule, HttpModule, routing,
+    MatListModule, MatToolbarModule, MatGridListModule, MatInputModule, MatFormFieldModule, MatSelectModule, MatOptionModule, MatButtonModule,
+    MatIconModule, MatMenuModule, MatAutocompleteModule, MatCardModule, MatDialogModule, MatProgressBarModule, MatProgressSpinnerModule, MatSliderModule,
+    MatSnackBarModule, MatTooltipModule
+    // MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

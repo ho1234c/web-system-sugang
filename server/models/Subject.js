@@ -16,5 +16,5 @@ const SubjectSchema = new Schema({
   seats: { type: Number, required: true }
 });
 
-UserSchema.plugin(autoIncrement.plugin, 'Subject');
+SubjectSchema.plugin(autoIncrement.plugin, 'Subject');
 module.exports = mongoose.model('Subject', SubjectSchema);

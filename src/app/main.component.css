@@ -1,0 +1,11 @@
+mat-toolbar {
+  background-color: blue;
+  color: white;
+}
+mat-grid-tile {
+  background-color: aqua;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

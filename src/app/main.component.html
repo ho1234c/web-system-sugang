@@ -1,0 +1,30 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <img src="../assets/intro_ajou_symbol.png" height="160" width="161"/>
+  <mat-toolbar>
+    <span>이름 : {{name}} </span>
+    <span class="spacer"></span>
+    <span>학과 : {{department}} </span>
+    <span class="spacer"></span>
+    <span>학년 : {{grade}}학년</span>
+    <span class="spacer"></span>
+    <span>최대신청학점 : {{maxPoint}}</span>
+  </mat-toolbar>
+</div>
+<div>
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+      <app-setting></app-setting>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <app-search></app-search>
+    </mat-grid-tile>
+    <mat-grid-tile>
+
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <app-chatting></app-chatting>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
