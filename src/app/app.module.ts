@@ -4,6 +4,7 @@ import { MatListModule, MatToolbarModule, MatGridListModule, MatInputModule, Mat
   MatSelectModule, MatOptionModule, MatButtonModule, MatIconModule, MatMenuModule,
   MatAutocompleteModule, MatCardModule, MatDialogModule, MatProgressBarModule, MatProgressSpinnerModule, MatSliderModule,
   MatSnackBarModule, MatTooltipModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import {MaterialModule} from './material.module';
 import { SettingComponent } from './settingComponent/setting.component';
 import { SearchComponent } from './searchComponent/search.component';
@@ -27,7 +28,7 @@ import { routing } from './app.routes';
     BrowserModule,  FormsModule, HttpModule, routing,
     MatListModule, MatToolbarModule, MatGridListModule, MatInputModule, MatFormFieldModule, MatSelectModule, MatOptionModule, MatButtonModule,
     MatIconModule, MatMenuModule, MatAutocompleteModule, MatCardModule, MatDialogModule, MatProgressBarModule, MatProgressSpinnerModule, MatSliderModule,
-    MatSnackBarModule, MatTooltipModule
+    MatSnackBarModule, MatTooltipModule, BrowserAnimationsModule
     // MaterialModule
   ],
   providers: [],
