@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CourseSet } from '../mock.course';
+import {MatTableDataSource} from "@angular/material";
 
 @Component({
   selector: 'app-setting',
@@ -9,3 +10,6 @@ export class SettingComponent {
   courseList = CourseSet;
 
 }
+
+
+

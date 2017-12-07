@@ -9,7 +9,7 @@ import {MatTableDataSource} from '@angular/material';
 })
 
 export class TableComponent {
-  displayedColumns = ['time', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+  displayedColumns = ['time', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
   dataSource = new MatTableDataSource<Element>(ELEMENT_DATA);
 }
 
@@ -20,32 +20,31 @@ export interface Element {
   wednesday: string;
   thursday: string;
   friday: string;
-  saturday: string;
-  sunday: string;
+
 }
 
 const ELEMENT_DATA: Element[] = [
-  {time: 'Z (08:00)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: '', saturday: '', sunday: ''},
-  {time: 'Z (08:30)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: '', saturday: '', sunday: ''},
-  {time: 'A (09:00)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: '', saturday: '', sunday: ''},
-  {time: 'A (09:30)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: '', saturday: '', sunday: ''},
-  {time: 'A (10:00)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: '', saturday: '', sunday: ''},
-  {time: 'B (10:30)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: '', saturday: '', sunday: ''},
-  {time: 'B (11:00)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: '', saturday: '', sunday: ''},
-  {time: 'B (11:30)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: '', saturday: '', sunday: ''},
-  {time: 'C (12:00)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: '', saturday: '', sunday: ''},
-  {time: 'C (12:30)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: '', saturday: '', sunday: ''},
-  {time: 'C (13:00)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: '', saturday: '', sunday: ''},
-  {time: 'D (13:30)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: '', saturday: '', sunday: ''},
-  {time: 'D (14:00)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: '', saturday: '', sunday: ''},
-  {time: 'D (14:30)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: '', saturday: '', sunday: ''},
-  {time: 'E (15:00)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: '', saturday: '', sunday: ''},
-  {time: 'E (15:30)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: '', saturday: '', sunday: ''},
-  {time: 'E (16:00)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: '', saturday: '', sunday: ''},
-  {time: 'F (16:30)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: '', saturday: '', sunday: ''},
-  {time: 'F (17:00)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: '', saturday: '', sunday: ''},
-  {time: 'F (17:30)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: '', saturday: '', sunday: ''},
-  {time: 'G (18:00)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: '', saturday: '', sunday: ''},
-  {time: 'G (18:30)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: '', saturday: '', sunday: ''},
-  {time: 'G (19:00)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: '', saturday: '', sunday: ''},
+  {time: 'Z (08:00)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: ''},
+  {time: 'Z (08:30)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: ''},
+  {time: 'A (09:00)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: ''},
+  {time: 'A (09:30)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: ''},
+  {time: 'A (10:00)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: ''},
+  {time: 'B (10:30)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: ''},
+  {time: 'B (11:00)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: ''},
+  {time: 'B (11:30)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: ''},
+  {time: 'C (12:00)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: ''},
+  {time: 'C (12:30)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: ''},
+  {time: 'C (13:00)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: ''},
+  {time: 'D (13:30)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: ''},
+  {time: 'D (14:00)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: ''},
+  {time: 'D (14:30)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: ''},
+  {time: 'E (15:00)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: ''},
+  {time: 'E (15:30)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: ''},
+  {time: 'E (16:00)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: ''},
+  {time: 'F (16:30)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: ''},
+  {time: 'F (17:00)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: ''},
+  {time: 'F (17:30)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: ''},
+  {time: 'G (18:00)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: ''},
+  {time: 'G (18:30)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: ''},
+  {time: 'G (19:00)', monday: '', tuesday: '', wednesday: '', thursday: '', friday: ''}
   ]
