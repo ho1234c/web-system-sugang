@@ -2,18 +2,197 @@
 
 <div>
   <mat-grid-list cols="2" rowHeight="2:1">
+    <!--// 1-->
     <mat-grid-tile>
-      <app-setting></app-setting>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <app-search></app-search>
-    </mat-grid-tile>
-    <mat-grid-tile>
+      <!--<app-setting></app-setting>-->
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+            공지제목 1
+            </mat-panel-title>
+            <mat-panel-description>
+            공지요약 1
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <a> 공지 내용 1 </a>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              공지제목 2
+            </mat-panel-title>
+            <mat-panel-description>
+              공지요약 2
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <a> 공지 내용 2 </a>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              공지제목 3
+            </mat-panel-title>
+            <mat-panel-description>
+              공지요약 3
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <a> 공지 내용 3 </a>
+        </mat-expansion-panel>
+      </mat-accordion>
 
     </mat-grid-tile>
+
+
+    <!--// 2-->
+    <mat-grid-tile>
+      <!--<app-search></app-search>-->
+      <div class="example-container mat-elevation-z8">
+        <mat-table #table [dataSource]="dataSource">
+          <!-- Position Column -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> NAME </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="major">
+            <mat-header-cell *matHeaderCellDef> MAJOR </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.major}} </mat-cell>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="subjectId">
+            <mat-header-cell *matHeaderCellDef> SUBJECTID </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.subjectId}} </mat-cell>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="credit">
+            <mat-header-cell *matHeaderCellDef> CREDIT </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.credit}} </mat-cell>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="time">
+            <mat-header-cell *matHeaderCellDef> TIME </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.time}} </mat-cell>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="professor">
+            <mat-header-cell *matHeaderCellDef> PROFESSOR </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.professor}} </mat-cell>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="lectureTime">
+            <mat-header-cell *matHeaderCellDef> LECTURETIME </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.lectureTime}} </mat-cell>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="lectureRoom">
+            <mat-header-cell *matHeaderCellDef> LECTUREROOM </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.lectureRoom}} </mat-cell>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="isCyber">
+            <mat-header-cell *matHeaderCellDef> ISCYBER </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.isCyber}} </mat-cell>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="addbutton">
+            <mat-header-cell *matHeaderCellDef> BUTTON </mat-header-cell>
+            <mat-cell *matCellDef="let element"> <button mat-button> {{element.addbutton}} </button> </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </div>
+    </mat-grid-tile>
+
+
+    <!--// 3-->
+    <mat-grid-tile>
+      <div class="example-container mat-elevation-z8">
+        <mat-table #table [dataSource]="dataSource2">
+          <!-- Position Column -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> NAME </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="major">
+            <mat-header-cell *matHeaderCellDef> MAJOR </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.major}} </mat-cell>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="subjectId">
+            <mat-header-cell *matHeaderCellDef> SUBJECTID </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.subjectId}} </mat-cell>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="credit">
+            <mat-header-cell *matHeaderCellDef> CREDIT </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.credit}} </mat-cell>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="time">
+            <mat-header-cell *matHeaderCellDef> TIME </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.time}} </mat-cell>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="professor">
+            <mat-header-cell *matHeaderCellDef> PROFESSOR </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.professor}} </mat-cell>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="lectureTime">
+            <mat-header-cell *matHeaderCellDef> LECTURETIME </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.lectureTime}} </mat-cell>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="lectureRoom">
+            <mat-header-cell *matHeaderCellDef> LECTUREROOM </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.lectureRoom}} </mat-cell>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="isCyber">
+            <mat-header-cell *matHeaderCellDef> ISCYBER </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.isCyber}} </mat-cell>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="addbutton">
+            <mat-header-cell *matHeaderCellDef> BUTTON </mat-header-cell>
+            <mat-cell *matCellDef="let element"> <button mat-button> {{element.addbutton}} </button> </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </div>
+    </mat-grid-tile>
+
+
+    <!--// 4-->
     <mat-grid-tile>
       <app-chatting></app-chatting>
     </mat-grid-tile>
   </mat-grid-list>
 </div>
+
+
+
+
 

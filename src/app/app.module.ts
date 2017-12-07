@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing } from './app.routes';
 import {CdkTableModule} from '@angular/cdk/table';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -35,8 +36,9 @@ import {CdkTableModule} from '@angular/cdk/table';
     MatSnackBarModule, MatTooltipModule,
     MatButtonToggleModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatExpansionModule, MatNativeDateModule,
     MatPaginatorModule, MatRadioModule, MatRippleModule, MatSidenavModule, MatSlideToggleModule, MatSortModule, MatTableModule,
-    MatTabsModule, MatStepperModule
+    MatTabsModule, MatStepperModule,
     // MaterialModule
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
