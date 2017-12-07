@@ -14,10 +14,10 @@ module.exports = io => {
             io.emit('server message', { message : data.message , displayname : user.displayname });
         });
 
-        socket.on('disconnect', () => {            
+        socket.on('disconnect', () => {
             const idx = userList.indexOf(user.displayname);
 
-            if (index > -1) userList.splice(index, 1);
+            if (idx > -1) userList.splice(idx, 1);
             
             io.emit('leave', userList);
         });

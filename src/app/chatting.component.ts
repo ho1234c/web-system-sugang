@@ -15,6 +15,9 @@ export class ChattingComponent implements OnInit {
   socket = io(this.url);
 
   constructor() {
+    this.socket.on('connect', () => {
+      console.log('connect');
+    })
     this.socket.on('broadcast', function (msg) {
       this.addMessage(msg);
     });

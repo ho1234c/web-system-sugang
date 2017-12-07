@@ -43,3 +43,6 @@ Thumbs.db
 
 # http mock
 *.http
+
+# env
+.env
