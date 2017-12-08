@@ -17,17 +17,19 @@ import { NavComponent } from './nav.component';
 import { MainComponent} from './main.component';
 import { TableComponent} from './table.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing } from './app.routes';
 import {CdkTableModule} from '@angular/cdk/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginModalComponent } from './loginmodal.component';
+
 
 @NgModule({
   declarations: [
     AppComponent, ChattingComponent, SettingComponent, SearchComponent,
     // MaterialModule,
-    NavComponent, MainComponent, TableComponent
+    NavComponent, MainComponent, TableComponent, LoginModalComponent
   ],
   imports: [
     BrowserModule,  FormsModule, HttpModule, routing,
