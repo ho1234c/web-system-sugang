@@ -22,7 +22,7 @@ import { HttpModule } from '@angular/http';
 import { routing } from './app.routes';
 import {CdkTableModule} from '@angular/cdk/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginModalComponent } from './loginmodal.component';
+import { LoginModalComponent } from './modal.component';
 
 
 @NgModule({

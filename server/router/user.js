@@ -3,9 +3,10 @@ const router = express.Router();
 const User = require('../models/User');
 const passwordHash = require('../lib/passwordHash');
 
+
 router.post('/create', (req, res, next) => {
   const User = new User({
-    username: req.body.username,
+    email: req.body.email,
     password: passwordHash(req.body.password),
     displayname: req.body.displayname
   });

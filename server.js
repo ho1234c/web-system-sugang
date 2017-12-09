@@ -40,6 +40,7 @@ const subject = require('./server/router/subject');
 app.use('/api/user', user);
 app.use('/api/user', subject);
 
+
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
