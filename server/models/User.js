@@ -9,7 +9,7 @@ const UserSchema = new Schema({
   displayName: String,
   created_at: { type: Date, default: Date.now() },
   maximum_credit: { type: Number, default: 19 },
-  subjects: [Subject]
+  subjects: [{ type: Schema.Types.ObjectId, ref: 'Subject' }]
 });
 
 UserSchema.plugin(autoIncrement.plugin, 'User');
