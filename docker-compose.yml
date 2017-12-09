@@ -11,8 +11,24 @@ services:
             - 443:443
         volumes: 
             - /data/nginx:/var/log/nginx
-    app:
-        container_name: app
+    app1:
+        container_name: app1
+        build: .
+        env_file: .env
+        ports:
+            - 3000
+        links:
+            - mongodb:db
+    app2:
+        container_name: app2
+        build: .
+        env_file: .env
+        ports:
+            - 3000
+        links:
+            - mongodb:db
+    app3:
+        container_name: app3
         build: .
         env_file: .env
         ports:
