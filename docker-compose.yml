@@ -5,7 +5,9 @@ services:
         container_name: nginx
         build: ./nginx
         links:
-            - app:app
+            - app1:app1
+            - app2:app2
+            - app3:app3
         ports:
             - 80:80
             - 443:443
