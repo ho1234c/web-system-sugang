@@ -2,7 +2,6 @@ docker-compose.yml
 *.log
 e2e/*
 test/*
-src/*
 node_modules/*
 .jshintrc
 .gitignore
