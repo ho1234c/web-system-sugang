@@ -1,0 +1,28 @@
+version: "2"
+
+services:
+    nginx:
+        container_name: nginx
+        build: ./nginx
+        links:
+            - app:app
+        ports:
+            - 80:80
+            - 443:443
+        volumes: 
+            - /data/nginx:/var/log/nginx
+    app:
+        container_name: app
+        build: .
+        env_file: .env
+        ports:
+            - 3000
+        links:
+            - mongodb:db
+    mongodb:
+        container_name: mongodb
+        image: mongo:3.4
+        ports:
+            - 27017
+        volumes: 
+            - /data/mongo:/data/db

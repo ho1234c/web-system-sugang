@@ -1,5 +1,6 @@
 // Get dependencies
 const express = require('express');
+require('dotenv').config();
 const path = require('path');
 const http = require('http');
 const logger = require('morgan');
@@ -20,7 +21,8 @@ db.once('open', function(){
     console.log('mongodb connect');
 });
 
-const connect = mongoose.connect('mongodb://127.0.0.1:27017/websystem', { useMongoClient: true });
+const { DB_HOST, DB_PORT, DB_NAME } = process.env;
+const connect = mongoose.connect(`mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`, { useMongoClient: true });
 autoIncrement.initialize(connect);
 
 const app = express();
