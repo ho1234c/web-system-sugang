@@ -19,4 +19,5 @@ export class NavComponent {
   grade = 3;
   maxPoint = 21;
 
+  showDialog = false;
 }
