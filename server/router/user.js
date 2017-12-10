@@ -5,10 +5,12 @@ const User = require('../models/User');
 const passwordHash = require('../lib/passwordHash');
 
 router.post('/create', (req, res, next) => {
+  const { email, password, displayName } = req.body;
+
   const user = new User({
-    email: req.body.email,
+    email, 
     password: passwordHash(req.body.password),
-    displayName: req.body.displayName
+    displayName
   });
 
   user.save(err => {
