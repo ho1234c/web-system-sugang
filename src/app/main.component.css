@@ -2,7 +2,15 @@ mat-toolbar {
   background-color: blue;
   color: white;
 }
+
+mat-card {
+  width: 100%;
+  height: 100%;
+}
+
 mat-grid-tile {
+  outline-style: solid;
+  outline-color: gray;
   background-color: aqua;
 }
 

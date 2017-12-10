@@ -11,9 +11,9 @@ import { MatListModule, MatToolbarModule, MatGridListModule, MatInputModule, Mat
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import {MaterialModule} from './material.module';
-import { SettingComponent } from './settingComponent/setting.component';
 import { SearchComponent } from './searchComponent/search.component';
 import { ChattingComponent } from './chatting.component';
+import { AnnounceComponent } from './announceComponent/announce.component';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav.component';
 import { MainComponent} from './main.component';
@@ -27,7 +27,7 @@ import {CdkTableModule} from '@angular/cdk/table';
 
 @NgModule({
   declarations: [
-    AppComponent, ChattingComponent, SettingComponent, SearchComponent, JoinComponent,
+    AppComponent, ChattingComponent, SearchComponent, JoinComponent, AnnounceComponent,
     // MaterialModule,
     NavComponent, MainComponent, TableComponent
   ],
