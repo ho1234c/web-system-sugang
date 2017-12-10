@@ -1,12 +1,14 @@
+<mat-card>
 <div class="example-container mat-elevation-z8">
-  <div class="example-header">
+  <div class="example-header" style="display: inline;">
     <mat-form-field>
-      <mat-select placeholder="학과">
-        <mat-option *ngFor="let major of majorName" (onSelectionChange)="applyFilter(major)">
+      <mat-select placeholder="학과" [(ngModel)]="selected">
+        <mat-option *ngFor="let major of majorName" [value]="major">
           {{ major }}
         </mat-option>
       </mat-select>
     </mat-form-field>
+    <input type="button" (click)="applyFilter(selected)" value="찾기">
   </div>
 
     <mat-table #table [dataSource]="dataSource">
@@ -61,4 +63,4 @@
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
 </div>
-<input type="button" (click)="register(12)">
+</mat-card>

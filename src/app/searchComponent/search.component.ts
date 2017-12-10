@@ -26,8 +26,6 @@ export class SearchComponent {
 
   register(subjectId: number) {
     //해당 강의 신청
-    //this.dataSource.filter = this.selected;
-    console.log(this.dataSource.filter);
   }
     applyFilter(filterValue: string) {
       this.dataSource.filter = filterValue;

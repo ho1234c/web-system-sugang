@@ -4,6 +4,9 @@
   height: 100%;
   width: 100%;
 }
+mat-card {
+  width: 100%;
+}
 
 .example-header {
   min-height: 10px;

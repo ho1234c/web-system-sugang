@@ -1,16 +1,23 @@
 <mat-card>
+
+    <div class="example-header">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="검색">
+      </mat-form-field>
+    </div>
+
  <div class="example-container mat-elevation-z8">
 
     <mat-table [dataSource]="dataSource" matSort>
 
       <ng-container matColumnDef="announceId">
         <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
-        <mat-cell *matCellDef="let row"> {{row.announceId}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{element.announceId}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="title">
         <mat-header-cell *matHeaderCellDef mat-sort-header> 제목 </mat-header-cell>
-        <mat-cell *matCellDef="let row"> {{row.title}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
       </ng-container>
 
       <mat-header-row *matHeaderRowDef="announceColumns"></mat-header-row>
@@ -20,11 +27,5 @@
 
     <mat-paginator [pageSizeOptions]="[5]"></mat-paginator>
   </div>
-  <mat-card-footer>
-  <div class="example-header">
-    <mat-form-field>
-      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="검색">
-    </mat-form-field>
-  </div>
-  </mat-card-footer>
+
 </mat-card>

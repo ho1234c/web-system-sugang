@@ -26,7 +26,8 @@ export class AnnounceComponent {
   constructor() {
     // Create 100 announce
     const announces: Announce[] = [];
-    for (let i = 0; i <= this.announceList.length; i++) { announces.push(this.announceList[i]); }
+    const temp = this.announceList.length;
+    for (let i = 0; i < temp; i++) { announces.push(this.announceList.pop()); }
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(announces);
