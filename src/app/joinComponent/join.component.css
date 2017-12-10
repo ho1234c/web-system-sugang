@@ -1,15 +1,11 @@
 .example-container {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
-}
-mat-card {
-  width: 100%;
+  min-width: 500px;
 }
 
 .example-header {
-  min-height: 10px;
+  min-height: 20px;
   padding: 3px 2px 0;
 }
 

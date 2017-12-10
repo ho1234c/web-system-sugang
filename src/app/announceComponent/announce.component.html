@@ -1,0 +1,40 @@
+<mat-card>
+
+    <div class="example-header">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="검색">
+      </mat-form-field>
+    </div>
+
+ <div class="example-container mat-elevation-z8">
+
+   <mat-accordion>
+   <mat-table [dataSource]="dataSource" matSort>
+
+       <ng-container matColumnDef="announceId">
+        <mat-header-cell *matHeaderCellDef mat-sort-header class="idCol"> ID </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="idCol"> {{element.announceId}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef mat-sort-header class="titleCol"> 제목 </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="titleCol">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              {{element.title}}
+            </mat-expansion-panel-header>
+              {{element.content}}
+          </mat-expansion-panel>
+        </mat-cell>
+      </ng-container>
+
+       <mat-header-row *matHeaderRowDef="announceColumns"></mat-header-row>
+      <mat-row *matRowDef="let element; columns: announceColumns;">
+      </mat-row>
+    </mat-table>
+
+    <mat-paginator [pageSizeOptions]="[5]"></mat-paginator>
+     </mat-accordion>
+
+ </div>
+</mat-card>
