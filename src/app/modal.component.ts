@@ -4,8 +4,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 
 @Component({
   selector: 'app-modal-login',
-  templateUrl: './loginmodal.component.html',
-  styleUrls: ['./loginmodal.component.css'],
+  templateUrl: './modal.component.html',
+  styleUrls: ['./modal.component.css'],
   animations: [
     trigger('dialog', [
       transition('void => *', [
