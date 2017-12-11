@@ -1,0 +1,13 @@
+POST http://localhost:3000/api/user/add/5a2e211defdfb0cdd04cdc81 HTTP/1.1
+content-type: application/json
+
+{
+    "subjectId": "5a2e2158efdfb0cdd04cdc82"
+}
+
+POST http://localhost:3000/api/user/add/5a2e211defdfb0cdd04cdc81 HTTP/1.1
+content-type: application/json
+
+{
+    "subjectId": "5a2e22636fc45cd180368442"
+}

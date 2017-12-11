@@ -12,5 +12,4 @@ const UserSchema = new Schema({
   subjects: [{ type: Schema.Types.ObjectId, ref: 'Subject' }]
 });
 
-UserSchema.plugin(autoIncrement.plugin, 'User');
 module.exports = mongoose.model('User', UserSchema);

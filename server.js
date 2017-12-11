@@ -22,8 +22,7 @@ db.once('open', function(){
 });
 
 const { DB_HOST, DB_PORT, DB_NAME } = process.env;
-const connect = mongoose.connect(`mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`, { useMongoClient: true });
-autoIncrement.initialize(connect);
+mongoose.connect(`mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`, { useMongoClient: true });
 
 const app = express();
 
@@ -84,3 +83,9 @@ io.use((socket, next) => {
 });
 
 require('./server/lib/socket')(io);
+
+// error handler
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).send('Server error!');
+});

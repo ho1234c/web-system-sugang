@@ -2,6 +2,7 @@ const express = require('express');
 const passport = require('passport');
 const router = express.Router();
 const User = require('../models/User');
+const Subject = require('../models/Subject');
 const passwordHash = require('../lib/passwordHash');
 
 router.post('/create', (req, res, next) => {
@@ -14,7 +15,9 @@ router.post('/create', (req, res, next) => {
   });
 
   user.save(err => {
-    if(err) console.log(err);
+    if(err) {
+      return next(err);
+    }
     res.send('success');
   });
 });
@@ -30,6 +33,7 @@ router.post('/login', (req, res, next) => {
     const userData = {
       email: user.email,
       displayName: user.displayName,
+      subjects: user.subjects 
     };
 
     return req.logIn(userData, err => {
@@ -45,5 +49,23 @@ router.get('/logout', (req, res) => {
   req.logout();
   res.sendStatus(200).send('logout success');
 });
+
+router.post('/add/:userId', (req, res, next) => {
+  const { userId } = req.params;
+  const { subjectId } = req.body;
+
+  User.findById(userId, (err, user) => {
+    Subject.findById(subjectId, (err, subject) => {
+      user.subjects.push(subject);
+      user.save(err => {
+        if(err) {
+          return next(err);
+        }
+        res.send('success');
+      })
+    })
+  });
+  
+})
 
 module.exports = router;
