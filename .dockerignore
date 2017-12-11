@@ -1,0 +1,9 @@
+docker-compose.yml
+*.log
+e2e/*
+test/*
+node_modules/*
+.jshintrc
+.gitignore
+.babelrc
+README.md
