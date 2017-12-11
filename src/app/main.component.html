@@ -1,11 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 <div>
-  <mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-list cols="2" rowHeight="600px">
     <!--// 1-->
     <mat-grid-tile>
-      <!--<app-setting></app-setting>-->
-      <mat-accordion>
+      <mat-card>
+      <app-announce></app-announce>
+      <!--<mat-accordion>
         <mat-expansion-panel>
           <mat-expansion-panel-header>
             <mat-panel-title>
@@ -39,17 +40,19 @@
           </mat-expansion-panel-header>
           <a> 공지 내용 3 </a>
         </mat-expansion-panel>
-      </mat-accordion>
-
+      </mat-accordion>-->
+      </mat-card>
     </mat-grid-tile>
 
 
     <!--// 2-->
     <mat-grid-tile>
-      <!--<app-search></app-search>-->
-      <div class="example-container mat-elevation-z8">
+      <mat-card>
+      <app-search></app-search>
+      </mat-card>
+      <!--<div class="example-container mat-elevation-z8">
         <mat-table #table [dataSource]="dataSource">
-          <!-- Position Column -->
+          &lt;!&ndash; Position Column &ndash;&gt;
           <ng-container matColumnDef="name">
             <mat-header-cell *matHeaderCellDef> NAME </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
@@ -60,49 +63,49 @@
             <mat-cell *matCellDef="let element"> {{element.major}} </mat-cell>
           </ng-container>
 
-          <!-- Name Column -->
+          &lt;!&ndash; Name Column &ndash;&gt;
           <ng-container matColumnDef="subjectId">
             <mat-header-cell *matHeaderCellDef> SUBJECTID </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.subjectId}} </mat-cell>
           </ng-container>
 
-          <!-- Weight Column -->
+          &lt;!&ndash; Weight Column &ndash;&gt;
           <ng-container matColumnDef="credit">
             <mat-header-cell *matHeaderCellDef> CREDIT </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.credit}} </mat-cell>
           </ng-container>
 
-          <!-- Weight Column -->
+          &lt;!&ndash; Weight Column &ndash;&gt;
           <ng-container matColumnDef="time">
             <mat-header-cell *matHeaderCellDef> TIME </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.time}} </mat-cell>
           </ng-container>
 
-          <!-- Weight Column -->
+          &lt;!&ndash; Weight Column &ndash;&gt;
           <ng-container matColumnDef="professor">
             <mat-header-cell *matHeaderCellDef> PROFESSOR </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.professor}} </mat-cell>
           </ng-container>
 
-          <!-- Weight Column -->
+          &lt;!&ndash; Weight Column &ndash;&gt;
           <ng-container matColumnDef="lectureTime">
             <mat-header-cell *matHeaderCellDef> LECTURETIME </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.lectureTime}} </mat-cell>
           </ng-container>
 
-          <!-- Weight Column -->
+          &lt;!&ndash; Weight Column &ndash;&gt;
           <ng-container matColumnDef="lectureRoom">
             <mat-header-cell *matHeaderCellDef> LECTUREROOM </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.lectureRoom}} </mat-cell>
           </ng-container>
 
-          <!-- Weight Column -->
+          &lt;!&ndash; Weight Column &ndash;&gt;
           <ng-container matColumnDef="isCyber">
             <mat-header-cell *matHeaderCellDef> ISCYBER </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.isCyber}} </mat-cell>
           </ng-container>
 
-          <!-- Weight Column -->
+          &lt;!&ndash; Weight Column &ndash;&gt;
           <ng-container matColumnDef="addbutton">
             <mat-header-cell *matHeaderCellDef> BUTTON </mat-header-cell>
             <mat-cell *matCellDef="let element"> <button mat-button> {{element.addbutton}} </button> </mat-cell>
@@ -111,15 +114,18 @@
           <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
           <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
         </mat-table>
-      </div>
+      </div>-->
     </mat-grid-tile>
 
 
     <!--// 3-->
     <mat-grid-tile>
-      <div class="example-container mat-elevation-z8">
+      <mat-card>
+        <app-join></app-join>
+      </mat-card>
+      <!--<div class="example-container mat-elevation-z8">
         <mat-table #table [dataSource]="dataSource2">
-          <!-- Position Column -->
+          &lt;!&ndash; Position Column &ndash;&gt;
           <ng-container matColumnDef="name">
             <mat-header-cell *matHeaderCellDef> NAME </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
@@ -130,49 +136,49 @@
             <mat-cell *matCellDef="let element"> {{element.major}} </mat-cell>
           </ng-container>
 
-          <!-- Name Column -->
+          &lt;!&ndash; Name Column &ndash;&gt;
           <ng-container matColumnDef="subjectId">
             <mat-header-cell *matHeaderCellDef> SUBJECTID </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.subjectId}} </mat-cell>
           </ng-container>
 
-          <!-- Weight Column -->
+          &lt;!&ndash; Weight Column &ndash;&gt;
           <ng-container matColumnDef="credit">
             <mat-header-cell *matHeaderCellDef> CREDIT </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.credit}} </mat-cell>
           </ng-container>
 
-          <!-- Weight Column -->
+          &lt;!&ndash; Weight Column &ndash;&gt;
           <ng-container matColumnDef="time">
             <mat-header-cell *matHeaderCellDef> TIME </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.time}} </mat-cell>
           </ng-container>
 
-          <!-- Weight Column -->
+          &lt;!&ndash; Weight Column &ndash;&gt;
           <ng-container matColumnDef="professor">
             <mat-header-cell *matHeaderCellDef> PROFESSOR </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.professor}} </mat-cell>
           </ng-container>
 
-          <!-- Weight Column -->
+          &lt;!&ndash; Weight Column &ndash;&gt;
           <ng-container matColumnDef="lectureTime">
             <mat-header-cell *matHeaderCellDef> LECTURETIME </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.lectureTime}} </mat-cell>
           </ng-container>
 
-          <!-- Weight Column -->
+          &lt;!&ndash; Weight Column &ndash;&gt;
           <ng-container matColumnDef="lectureRoom">
             <mat-header-cell *matHeaderCellDef> LECTUREROOM </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.lectureRoom}} </mat-cell>
           </ng-container>
 
-          <!-- Weight Column -->
+          &lt;!&ndash; Weight Column &ndash;&gt;
           <ng-container matColumnDef="isCyber">
             <mat-header-cell *matHeaderCellDef> ISCYBER </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.isCyber}} </mat-cell>
           </ng-container>
 
-          <!-- Weight Column -->
+          &lt;!&ndash; Weight Column &ndash;&gt;
           <ng-container matColumnDef="addbutton">
             <mat-header-cell *matHeaderCellDef> BUTTON </mat-header-cell>
             <mat-cell *matCellDef="let element"> <button mat-button> {{element.addbutton}} </button> </mat-cell>
@@ -181,12 +187,13 @@
           <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
           <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
         </mat-table>
-      </div>
+      </div>-->
     </mat-grid-tile>
 
 
     <!--// 4-->
     <mat-grid-tile>
+      <mat-card>
       <!--<app-chatting></app-chatting>-->
       <div id="wrapper" style="min-width: 80%; min-height: 100%">
         <div id="menu">
@@ -211,8 +218,8 @@
 
         });
       </script>
+      </mat-card>
     </mat-grid-tile>
-
   </mat-grid-list>
 </div>
 
