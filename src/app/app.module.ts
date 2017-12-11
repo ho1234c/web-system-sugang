@@ -23,7 +23,8 @@ import { routing } from './app.routes';
 import {CdkTableModule} from '@angular/cdk/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginModalComponent } from './modal.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { HttpService } from './http.service';
 
 @NgModule({
   declarations: [
@@ -40,9 +41,9 @@ import { LoginModalComponent } from './modal.component';
     MatPaginatorModule, MatRadioModule, MatRippleModule, MatSidenavModule, MatSlideToggleModule, MatSortModule, MatTableModule,
     MatTabsModule, MatStepperModule,
     // MaterialModule
-    BrowserAnimationsModule
+    BrowserAnimationsModule, HttpClientModule
   ],
-  providers: [],
+  providers: [ HttpService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

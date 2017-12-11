@@ -1,16 +1,11 @@
 <div class="example-container mat-elevation-z8">
   <mat-table #table [dataSource]="dataSource">
 
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-
-    <!-- Position Column -->
     <ng-container matColumnDef="time">
       <mat-header-cell *matHeaderCellDef> 교시/요일 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.time}} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.time}}</mat-cell>
     </ng-container>
 
-    <!-- Name Column -->
     <ng-container matColumnDef="monday">
       <mat-header-cell *matHeaderCellDef> 월 </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.monday}} </mat-cell>
@@ -38,10 +33,7 @@
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+
   </mat-table>
 </div>
-
-
-<!-- Copyright 2017 Google Inc. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license -->

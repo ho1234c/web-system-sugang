@@ -1,4 +1,4 @@
-export interface Subjectselect {
+export interface addSubject {
   name: string;
   major: string;
   subjectId: string;
@@ -8,5 +8,4 @@ export interface Subjectselect {
   lectureTime: string ;
   lectureRoom: string;
   isCyber: boolean;
-  addbutton: string;
 }
