@@ -9,9 +9,10 @@ import { MatListModule, MatToolbarModule, MatGridListModule, MatInputModule, Mat
   MatTabsModule, MatStepperModule
   } from '@angular/material';
 // import {MaterialModule} from './material.module';
-import { SettingComponent } from './settingComponent/setting.component';
+import { AnnounceComponent } from './announceComponent/announce.component';
 import { SearchComponent } from './searchComponent/search.component';
 import { ChattingComponent } from './chatting.component';
+import { JoinComponent } from './joinComponent/join.component';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav.component';
 import { MainComponent} from './main.component';
@@ -28,7 +29,7 @@ import { HttpService } from './http.service';
 
 @NgModule({
   declarations: [
-    AppComponent, ChattingComponent, SettingComponent, SearchComponent,
+    AppComponent, ChattingComponent, AnnounceComponent, SearchComponent, JoinComponent,
     // MaterialModule,
     NavComponent, MainComponent, TableComponent, LoginModalComponent
   ],
