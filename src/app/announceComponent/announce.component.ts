@@ -20,16 +20,11 @@ export class AnnounceComponent {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  //this.myform.resetForm();
-  // list update 함수
-
   constructor() {
-    // Create 100 announce
     const announces: Announce[] = [];
     const temp = this.announceList.length;
     for (let i = 0; i < temp; i++) { announces.push(this.announceList.pop()); }
 
-    // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(announces);
   }
 

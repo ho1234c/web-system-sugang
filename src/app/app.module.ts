@@ -8,28 +8,30 @@ import { MatListModule, MatToolbarModule, MatGridListModule, MatInputModule, Mat
   MatPaginatorModule, MatRadioModule, MatRippleModule, MatSidenavModule, MatSlideToggleModule, MatSortModule, MatTableModule,
   MatTabsModule, MatStepperModule
   } from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import {MaterialModule} from './material.module';
+import { AnnounceComponent } from './announceComponent/announce.component';
 import { SearchComponent } from './searchComponent/search.component';
 import { ChattingComponent } from './chatting.component';
-import { AnnounceComponent } from './announceComponent/announce.component';
+import { JoinComponent } from './joinComponent/join.component';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav.component';
 import { MainComponent} from './main.component';
 import { TableComponent} from './table.component';
 
-import { JoinComponent } from './joinComponent/join.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing } from './app.routes';
 import {CdkTableModule} from '@angular/cdk/table';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginModalComponent } from './modal.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent, ChattingComponent, SearchComponent, JoinComponent, AnnounceComponent,
+    AppComponent, ChattingComponent, AnnounceComponent, SearchComponent, JoinComponent,
     // MaterialModule,
-    NavComponent, MainComponent, TableComponent
+    NavComponent, MainComponent, TableComponent, LoginModalComponent
   ],
   imports: [
     BrowserModule,  FormsModule, HttpModule, routing,
@@ -37,8 +39,9 @@ import {CdkTableModule} from '@angular/cdk/table';
     MatIconModule, MatMenuModule, MatAutocompleteModule, MatCardModule, MatDialogModule, MatProgressBarModule, MatProgressSpinnerModule, MatSliderModule,
     BrowserAnimationsModule, MatSnackBarModule, MatTooltipModule, MatButtonToggleModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatExpansionModule, MatNativeDateModule,
     MatPaginatorModule, MatRadioModule, MatRippleModule, MatSidenavModule, MatSlideToggleModule, MatSortModule, MatTableModule,
-    MatTabsModule, MatStepperModule
+    MatTabsModule, MatStepperModule,
     // MaterialModule
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
