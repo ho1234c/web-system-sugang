@@ -2,22 +2,21 @@ const express = require('express');
 const passport = require('passport');
 const router = express.Router();
 const User = require('../models/User');
+const Subject = require('../models/Subject');
 const passwordHash = require('../lib/passwordHash');
 
-
 router.post('/create', (req, res, next) => {
-<<<<<<< HEAD
-  const User = new User({
-=======
+  const { email, password, displayName } = req.body;
   const user = new User({
->>>>>>> origin/ksy
-    email: req.body.email,
+    email,
     password: passwordHash(req.body.password),
-    displayName: req.body.displayName
+    displayName
   });
 
   user.save(err => {
-    if(err) console.log(err);
+    if(err) {
+      return next(err);
+    }
     res.send('success');
   });
 });
@@ -33,6 +32,7 @@ router.post('/login', (req, res, next) => {
     const userData = {
       email: user.email,
       displayName: user.displayName,
+      subjects: user.subjects
     };
 
     return req.logIn(userData, err => {
@@ -48,24 +48,23 @@ router.get('/logout', (req, res) => {
   req.logout();
   res.sendStatus(200).send('logout success');
 });
-/*
-router.post('getSubjectById', (req, res, err) => {
-  User.findOne({displayName: req.body.userId}, (err, doc) => {
-    if (err) {
-      return console.log("err" + err);
-    }
-    res.send(doc.joinSubjectId);
-  });
-});
 
-router.post('joinSubject', (req, res, err) => {
-  User.findOne({displayName: req.body.userId}, (err, doc) => {
-    if (err) {
-      return console.log("err" + err);
-    }
-    doc.joinSubjectId
-    res.send('success');
+router.post('/add/:userId', (req, res, next) => {
+  const { userId } = req.params;
+  const { subjectId } = req.body;
+
+  User.findById(userId, (err, user) => {
+    Subject.findById(subjectId, (err, subject) => {
+      user.subjects.push(subject);
+      user.save(err => {
+        if(err) {
+          return next(err);
+        }
+        res.send('success');
+      })
+    })
   });
-});
-*/
+
+})
+
 module.exports = router;
