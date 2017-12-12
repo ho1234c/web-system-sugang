@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const autoIncrement = require('mongoose-auto-increment');
 
 const NoticeSchema = new Schema({
   major: { type: String, required: true },
@@ -10,5 +9,3 @@ const NoticeSchema = new Schema({
 });
 
 module.exports = mongoose.model('Notice', NoticeSchema);
-
-
