@@ -231,7 +231,8 @@ export class SubjectDataSource extends DataSource<any> {
     super();
   }
   connect(): Observable<any> {
-    return Observable.of(this.inputtable);
+    return;
+    // return Observable.of(this.inputtable);
   }
   disconnect() {}
 }

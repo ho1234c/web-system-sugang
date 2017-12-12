@@ -9,12 +9,6 @@ import { Subject } from './subject/Subject';
 export class HttpService {
 // http 라는 변수에 HttpClient 형 변수가 의존성 주입된다.
   constructor(private http: HttpClient) {  }
-  /**
-   * 테스트 데이터를 가진 GET, POST 두 종류의 요청을 서버에 보내는 예시
-   함수이다.
-   * /memo/testGET 과 /memo/testPOST 를 처리하는 코드가 서버에 있어야
-   한다.
-   */
 
   loadNoticeService() {
     return this.http.get('/api/notice/fetch');
