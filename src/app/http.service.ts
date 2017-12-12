@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from './subject/Subject';
 
-
 @Injectable()
 export class HttpService {
 // http 라는 변수에 HttpClient 형 변수가 의존성 주입된다.
@@ -13,11 +12,13 @@ export class HttpService {
   loadNoticeService() {
     return this.http.get('/api/notice/fetch');
   }
+
   loadSubjectService() {
     return this.http.get('/api/subject/fetch');
   }
+
   addSubjectService(element: Subject) {
-    return this.http.post('/api/subject/create' ,
+    return this.http.post('/api/subject/add' ,
     {
       name: element.name,
       major: element.major,

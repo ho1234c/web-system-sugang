@@ -2,7 +2,9 @@
   padding-top: 0;
   padding-bottom: 5em;
   display: grid;
-
+.spacer {
+  flex:auto;
+}
   header {
     position: fixed;
     z-index: 999;

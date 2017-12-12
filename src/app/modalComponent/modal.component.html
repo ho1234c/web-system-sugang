@@ -2,15 +2,15 @@
   <div class="example-container">
     <h1> Login </h1>
     <mat-form-field>
-      <input matInput placeholder="ID 입력">
+      <input matInput placeholder="ID 입력" [(ngModel)]="id">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="PW 입력">
+      <input matInput placeholder="PW 입력" [(ngModel)]="pw">
     </mat-form-field>
 
     <div class="button-row">
-      <button mat-raised-button color="primary">Login</button>
+      <button mat-raised-button color="primary" (click)="login()">Login</button>
     </div>
   </div>
   <button *ngIf="closable" (click)="close()" aria-label="Close" class="dialog__close-btn">X</button>
