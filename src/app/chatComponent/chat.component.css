@@ -1,5 +1,3 @@
-<<<<<<< HEAD:src/app/chatComponent/chat.component.css
-=======
 mat-toolbar {
   background-color: blue;
   color: white;
@@ -44,8 +42,6 @@ mat-card {
 .mat-accordion {
   min-width: 100%;
 }
-
->>>>>>> e7bdbc82c9db053da95c300c8dd12607662b1087:src/app/main.component.css
 /*챗팅*/
 body {
   font:12px arial;

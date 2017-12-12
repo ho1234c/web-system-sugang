@@ -41,9 +41,6 @@ testem.log
 .DS_Store
 Thumbs.db
 
-# http mock
-*.http
-
 # env
 .env
 

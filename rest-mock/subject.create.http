@@ -1,0 +1,31 @@
+POST http://localhost:3000/api/subject/create HTTP/1.1
+content-type: application/json
+
+{
+    "name": "웹시스템설계",
+    "major": "소프트웨어학과",
+    "courseNumber": "F038",
+    "credit": "4",
+    "time": "5",
+    "professor": "오상윤",
+    "lectureTime": "화C,수3,수4,금C",
+    "lectureRoom": "팔309,팔328",
+    "isCyber": "false"
+}
+
+###
+
+POST http://localhost:3000/api/subject/create HTTP/1.1
+content-type: application/json
+
+{
+    "name": "인간과 두뇌의 신비",
+    "major": "교양",
+    "courseNumber": "X391",
+    "credit": "3",
+    "time": "3",
+    "professor": "김세나",
+    "lectureTime": "수D,금D",
+    "lectureRoom": "성105",
+    "isCyber": "false"
+}

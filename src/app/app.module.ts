@@ -16,7 +16,7 @@ import { modalComponent } from './modalComponent/modal.component';
 
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpService } from './http.service';
+import { HttpService } from './HttpService';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule, MatToolbarModule, MatGridListModule, MatInputModule, MatFormFieldModule,
@@ -30,9 +30,6 @@ import { MatListModule, MatToolbarModule, MatGridListModule, MatInputModule, Mat
 import { AnnounceComponent } from './announceComponent/announce.component';
 import { SearchComponent } from './searchComponent/search.component';
 import { JoinComponent } from './joinComponent/join.component';
-
-
-
 
 @NgModule({
   declarations: [
@@ -48,6 +45,7 @@ import { JoinComponent } from './joinComponent/join.component';
     BrowserAnimationsModule, HttpClientModule, HttpModule
   ],
   providers: [ HttpService ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
