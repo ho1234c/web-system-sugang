@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 // Http 요청과 관련된 처리를 해주는 모듈을 import 해준다.
 import { HttpClient } from '@angular/common/http';
-import { addSubject } from './addsubject';
+import { addSubject } from './subject/addsubject';
 
 
 @Injectable()
@@ -15,19 +15,6 @@ export class HttpService {
    * /memo/testGET 과 /memo/testPOST 를 처리하는 코드가 서버에 있어야
    한다.
    */
-  testaddService() {
-    return this.http.post('/api/subject/addmemo',
-      {
-        title: "newtitle",
-        id: 555
-      });
-  }
-  testremoveService(tempID: number) {
-    return this.http.delete('/api/subject/removememo?request=' + tempID);
-  }
-  testloadService() {
-    return this.http.get('/api/subject/allmemo?request=1234');
-  }
 
   /////////////
   loadNoticeService() {

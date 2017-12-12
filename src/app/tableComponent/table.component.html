@@ -3,7 +3,7 @@
 
     <ng-container matColumnDef="time">
       <mat-header-cell *matHeaderCellDef> 교시/요일 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.time}}</mat-cell>
+      <mat-cell *matCellDef="let element">  {{element.time}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="monday">
@@ -30,10 +30,11 @@
       <mat-header-cell *matHeaderCellDef> 금 </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.friday}} </mat-cell>
     </ng-container>
-
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-
+    <mat-row  *matRowDef="let row; columns: displayedColumns;"></mat-row>
 
   </mat-table>
 </div>
+<!--<div *ngFor="let mySubjectDB1 of mySubjectDBs1">-->
+  <!--<span>{{mySubjectDB1.name}} {{mySubjectDB1.lectureRoom}}</span>-->
+<!--</div>-->

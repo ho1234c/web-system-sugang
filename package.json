@@ -30,6 +30,7 @@
     "connect-mongo": "^2.0.0",
     "cookie-parser": "^1.4.3",
     "core-js": "^2.4.1",
+    "daypilot-pro-angular": "https://npm.daypilot.org/daypilot-pro-angular/trial/8.3.2573.tar.gz",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "express-session": "^1.15.6",

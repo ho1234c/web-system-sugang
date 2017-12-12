@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 // const User = require('../models/User');
 // const passwordHash = require('../lib/passwordHash');
-const Memo = require('../models/memo');
 const Subject = require('../models/Subject');
 
 // get subject by major

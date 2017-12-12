@@ -1,5 +1,5 @@
 import {async, TestBed} from '@angular/core/testing';
-import {NavComponent} from './nav.component';
+import { navComponent } from './nav.component';
 import {MaterialModule} from '../material.module';
 
 describe('NavComponent', () => {
@@ -12,13 +12,13 @@ describe('NavComponent', () => {
         MaterialModule
       ],
       declarations: [
-        NavComponent
+        navComponent
       ],
       providers: [
       ],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(NavComponent);
+    fixture = TestBed.createComponent(navComponent);
     fixture.detectChanges();
     component = fixture.debugElement.componentInstance;
   }));
