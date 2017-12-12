@@ -17,7 +17,7 @@ export class HttpService {
    */
 
   loadNoticeService() {
-    return this.http.get('/api/notice/getAllNotice?request=notice req');
+    return this.http.get('/api/notice/fetch');
   }
   loadSubjectService() {
     return this.http.get('/api/subject/fetch');

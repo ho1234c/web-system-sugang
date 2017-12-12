@@ -2,22 +2,28 @@ const express = require('express');
 const router = express.Router();
 const Notice = require('../models/Notice');
 
-router.post('/createNotice', (req, res, next) => {
-  const Notice = new Notice({
+router.post('/create', (req, res, next) => {
+  const notice = new Notice({
     title: req.body.title,
-    body: req.body.content
+    body: req.body.body
   });
+
   notice.save(err => {
-    if(err) console.log(err);
+    if(err) {
+      return next(err);
+    }
     res.send('success');
   })
 });
 
-router.get('/getAllNotice', (req, res, next) => {
-    Notice.find((err, documents) => {
-      if(err)
-        return console.log(err);
-      return res.send(documents);
+router.get('/fetch', (req, res, next) => {
+    Notice.find({}, (err, documents) => {
+      if(err) {
+        return next(err);
+      }
+      console.log(documents);
+      res.json(documents);
     });
 });
+
 module.exports = router;

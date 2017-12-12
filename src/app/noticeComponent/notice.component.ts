@@ -10,6 +10,7 @@ import { HttpService } from '../http.service';
 export class noticeComponent implements OnInit {
   noticeDBs: Object;
   panelOpenState: boolean;
+
   ngOnInit() {
     this.panelOpenState = false;
     this.loadNotice();
@@ -17,7 +18,9 @@ export class noticeComponent implements OnInit {
   constructor(private httpService: HttpService) {}
 
   loadNotice(): any {
-    this.httpService.loadNoticeService().subscribe( result => this.noticeDBs = result);
+    this.httpService.loadNoticeService().subscribe( result => {
+      console.log(result);
+      this.noticeDBs = result
+    });
   }
-
 }
