@@ -6,11 +6,7 @@ const passwordHash = require('../lib/passwordHash');
 
 
 router.post('/create', (req, res, next) => {
-<<<<<<< HEAD
-  const user = new User({
-=======
   const User = new User({
->>>>>>> ksy
     email: req.body.email,
     password: passwordHash(req.body.password),
     displayName: req.body.displayName
@@ -48,5 +44,24 @@ router.get('/logout', (req, res) => {
   req.logout();
   res.sendStatus(200).send('logout success');
 });
+/*
+router.post('getSubjectById', (req, res, err) => {
+  User.findOne({displayName: req.body.userId}, (err, doc) => {
+    if (err) {
+      return console.log("err" + err);
+    }
+    res.send(doc.joinSubjectId);
+  });
+});
 
+router.post('joinSubject', (req, res, err) => {
+  User.findOne({displayName: req.body.userId}, (err, doc) => {
+    if (err) {
+      return console.log("err" + err);
+    }
+    doc.joinSubjectId
+    res.send('success');
+  });
+});
+*/
 module.exports = router;

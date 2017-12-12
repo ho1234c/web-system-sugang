@@ -3,6 +3,7 @@ import { CourseSet } from '../mock.course';
 import { Course } from '../course';
 import {Input} from '@angular/compiler/src/core';
 import {MatTableDataSource} from '@angular/material';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-search',

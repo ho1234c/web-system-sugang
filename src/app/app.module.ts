@@ -26,6 +26,8 @@ import {CdkTableModule} from '@angular/cdk/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginModalComponent } from './modal.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { HttpService } from './HttpService';
 
 @NgModule({
   declarations: [
@@ -39,11 +41,11 @@ import { LoginModalComponent } from './modal.component';
     MatIconModule, MatMenuModule, MatAutocompleteModule, MatCardModule, MatDialogModule, MatProgressBarModule, MatProgressSpinnerModule, MatSliderModule,
     BrowserAnimationsModule, MatSnackBarModule, MatTooltipModule, MatButtonToggleModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatExpansionModule, MatNativeDateModule,
     MatPaginatorModule, MatRadioModule, MatRippleModule, MatSidenavModule, MatSlideToggleModule, MatSortModule, MatTableModule,
-    MatTabsModule, MatStepperModule,
+    MatTabsModule, MatStepperModule, HttpClientModule,
     // MaterialModule
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

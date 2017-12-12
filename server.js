@@ -57,10 +57,11 @@ passportConfig(app);
 // Set api routes
 const user = require('./server/router/user');
 const subject = require('./server/router/subject');
+const notice = require('./server/router/notice');
 
 app.use('/api/user', user);
 app.use('/api/subject', subject);
-
+app.use('/api/notice', notice);
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
