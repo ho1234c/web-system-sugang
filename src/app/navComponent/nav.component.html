@@ -3,8 +3,6 @@
         <div fxLayout="row" fxLayoutAlign="start center" class="content">
             <div fxFlex="20%">
               <img src="../assets/intro_ajou_symbol.png" height="50" width="50"/>
-              <!--<button mat-raised-button routerLink="main"> Main </button>-->
-              <!--<button mat-raised-button routerLink="table" > Time Table </button>-->
               <a mat-raised-button routerLink="main"> Main </a>
               <a mat-raised-button routerLink="table"> Time Table </a>
             </div>
@@ -44,5 +42,5 @@
 </header>
 
 
-<app-modal-login [(visible)]="showDialog"></app-modal-login>
+<app-modal [(visible)]="showDialog"></app-modal>
 
