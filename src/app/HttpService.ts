@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {Announce} from './announce';
-import {Course} from './course';
+import {Course} from './subject/course';
 
 @Injectable()
 export class HttpService {

@@ -29,7 +29,7 @@ export class AnnounceComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getAnnounce();
+    //this.getAnnounce();
   }
   /**
    * Set the paginator and sort after the view init since this component will
@@ -45,6 +45,7 @@ export class AnnounceComponent implements OnInit {
     filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
     this.dataSource.filter = filterValue;
   }
+  /*
   getAnnounce() {
     this.httpService.getAllAnnounce().subscribe(result => {
       for (let i in result) {
@@ -55,4 +56,5 @@ export class AnnounceComponent implements OnInit {
   createAnnounce() {
     this.httpService.addAnnounce(this.announceList.pop());
   }
+  */
 }
