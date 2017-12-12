@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MatTableDataSource} from '@angular/material';
-import { Subjectselect } from '../subject/subjectselect';
-import { Subjectselects } from '../subject/mock.subjectselect';
-import { addSubject } from '../subject/addsubject';
+import { Subject } from '../subject/Subject';
+import { subjects } from '../subject/mock.subject';
 import { HttpService } from '../http.service';
 
 @Component({
@@ -12,20 +11,21 @@ import { HttpService } from '../http.service';
 })
 
 export class addsubjectComponent implements OnInit {
-  displayedColumns = ['name', 'major', 'subjectId', 'credit', 'time', 'professor', 'lectureTime', 'lectureRoom', 'isCyber', 'addbutton'];
-  dataSource = new MatTableDataSource<Subjectselect>(Subjectselects);
-  tempElement: addSubject;
+  displayedColumns = ['name', 'major', 'courseNumber', 'credit', 'time', 'professor', 'lectureTime', 'lectureRoom', 'isCyber', 'addbutton'];
+  dataSource = new MatTableDataSource<Subject>(subjects);
+  tempElement: Subject;
   ngOnInit() {
     this.tempElement = {
       name: '',
       major: '',
-      subjectId: '',
+      courseNumber: '',
       credit: 0,
       time: 0,
       professor: '',
       lectureTime: '',
       lectureRoom: '',
-      isCyber: true
+      isCyber: true,
+      seats: 0,
     };
   }
   constructor(private httpService: HttpService) {}
@@ -35,17 +35,18 @@ export class addsubjectComponent implements OnInit {
     filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
     this.dataSource.filter = filterValue;
   }
-  addSubject(_name: string, _major: string, _subjectId: string, _credit: number, _time: number, _professor: string,
-             _lectureTime: string, _lectureRoom: string, _isCyber: boolean): any {
+  addSubject(_name: string, _major: string, _courseNumber: string, _credit: number, _time: number, _professor: string,
+             _lectureTime: string, _lectureRoom: string, _isCyber: boolean, _seats: number): any {
     this.tempElement.name = _name;
     this.tempElement.major = _major;
-    this.tempElement.subjectId = _subjectId;
+    this.tempElement.courseNumber = _courseNumber;
     this.tempElement.credit = _credit;
     this.tempElement.time = _time;
     this.tempElement.professor = _professor;
     this.tempElement.lectureTime = _lectureTime;
     this.tempElement.lectureRoom = _lectureRoom;
     this.tempElement.isCyber = _isCyber;
+    this.tempElement.seats = _seats;
     this.httpService.addSubjectService(this.tempElement).subscribe();
   }
 }

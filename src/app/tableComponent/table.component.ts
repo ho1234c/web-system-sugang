@@ -1,7 +1,8 @@
 import {Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import {MatTableDataSource} from '@angular/material';
 import { HttpService } from '../http.service';
-import { Subjectselect } from '../subject/subjectselect';
+import { subjects } from '../subject/mock.subject';
+import { Subject } from '../subject/Subject';
 import {DataSource} from '@angular/cdk/collections';
 import {Observable} from 'rxjs/Observable';
 
@@ -16,7 +17,7 @@ export class tableComponent implements OnInit {
   dataSource = new MatTableDataSource<Element>(ELEMENT_DATA);
 
   dataSource2: any;
-  mySubjectDBs1: Subjectselect[];
+  mySubjectDBs1: Subject[];
 
   ngOnInit() {
     this.loadSubject();

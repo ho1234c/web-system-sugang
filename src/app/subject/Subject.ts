@@ -1,12 +1,12 @@
-export interface Subjectselect {
+export class Subject {
   name: string;
   major: string;
-  subjectId: string;
+  courseNumber: string;
   credit: number;
   time: number;
   professor: string;
   lectureTime: string ;
   lectureRoom: string;
   isCyber: boolean;
-  addbutton: string;
+  seats: number;
 }

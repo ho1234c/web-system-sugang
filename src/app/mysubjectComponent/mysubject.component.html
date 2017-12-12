@@ -1,6 +1,6 @@
 <!--// 3-->
   <div class="example-container mat-elevation-z8">
-    <mat-table #table [dataSource]="dataSource2">
+    <mat-table #table [dataSource]="dataSource">
       <!-- Position Column -->
       <ng-container matColumnDef="name">
         <mat-header-cell *matHeaderCellDef> NAME </mat-header-cell>
@@ -13,9 +13,9 @@
       </ng-container>
 
       <!-- Name Column -->
-      <ng-container matColumnDef="subjectId">
-        <mat-header-cell *matHeaderCellDef> SUBJECTID </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.subjectId}} </mat-cell>
+      <ng-container matColumnDef="courseNumber">
+        <mat-header-cell *matHeaderCellDef> COURSENUMBER </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.courseNumber}} </mat-cell>
       </ng-container>
 
       <!-- Weight Column -->

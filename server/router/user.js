@@ -9,7 +9,7 @@ router.post('/create', (req, res, next) => {
   const { email, password, displayName } = req.body;
   const user = new User({
     email,
-    password: passwordHash(req.body.password),
+    password: passwordHash(password),
     displayName
   });
 

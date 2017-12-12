@@ -1,6 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
-import { CourseSet } from '../subject/mock.course';
-import { Course } from '../subject/course';
+import { subjects } from '../subject/mock.subject';
+import { Subject } from '../subject/Subject';
 import {Input} from '@angular/compiler/src/core';
 import {MatTableDataSource} from '@angular/material';
 
@@ -10,15 +10,15 @@ import {MatTableDataSource} from '@angular/material';
   styleUrls: ['./join.component.css']
 })
 export class JoinComponent {
-  joinList = CourseSet;
+  joinList = subjects;
   @ViewChild('form') myform;
-  displayedColumns = ['subjectId', 'name', 'credit', 'lectureTime', 'lectureRoom', 'professor', 'seats', 'major', 'drop'];
+  displayedColumns = ['courseNumber', 'name', 'credit', 'lectureTime', 'lectureRoom', 'professor', 'seats', 'major', 'drop'];
 
-  dataSource = new MatTableDataSource<Course>(this.joinList);
+  dataSource = new MatTableDataSource<Subject>(this.joinList);
 
   // this.myform.resetForm();
 
-  drop(subjectId: number) {
+  drop(courseNumber: string) {
     // 해당 강의 취소
   }
 }

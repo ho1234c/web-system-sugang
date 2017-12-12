@@ -1,9 +1,9 @@
 <div class="example-container mat-elevation-z8">
   <mat-table #table [dataSource]="dataSource">
 
-    <ng-container matColumnDef="subjectId">
+    <ng-container matColumnDef="courseNumber">
       <mat-header-cell *matHeaderCellDef> 과목코드 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.subjectId}} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.courseNumber}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="name">

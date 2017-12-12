@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 // Http 요청과 관련된 처리를 해주는 모듈을 import 해준다.
 import { HttpClient } from '@angular/common/http';
-import { addSubject } from './subject/addsubject';
+import { Subject } from './subject/Subject';
 
 
 @Injectable()
@@ -16,19 +16,18 @@ export class HttpService {
    한다.
    */
 
-  /////////////
   loadNoticeService() {
     return this.http.get('/api/notice/getAllNotice?request=notice req');
   }
   loadSubjectService() {
-    return this.http.get('/api/subject/getAllMySubject?request=loadmysubject');
+    return this.http.get('/api/subject/fetch');
   }
-  addSubjectService(element: addSubject) {
+  addSubjectService(element: Subject) {
     return this.http.post('/api/subject/create' ,
     {
       name: element.name,
       major: element.major,
-      subjectId: element.subjectId,
+      courseNumber: element.courseNumber,
       credit: element.credit,
       time: element.time,
       professor: element.professor,
@@ -40,5 +39,4 @@ export class HttpService {
   removeSubjectService(_name: string) {
     return this.http.delete('/api/subject/remove?request=' + _name);
   }
-  //////////////////
 }

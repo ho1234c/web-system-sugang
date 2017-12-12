@@ -17,9 +17,9 @@
       </ng-container>
 
       <!-- Name Column -->
-      <ng-container matColumnDef="subjectId">
-        <mat-header-cell *matHeaderCellDef> SUBJECTID </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.subjectId}} </mat-cell>
+      <ng-container matColumnDef="courseNumber">
+        <mat-header-cell *matHeaderCellDef> COURSENUMBER </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.courseNumber}} </mat-cell>
       </ng-container>
 
       <!-- Weight Column -->
@@ -62,7 +62,7 @@
       <ng-container matColumnDef="addbutton">
         <mat-header-cell *matHeaderCellDef> BUTTON </mat-header-cell>
         <mat-cell *matCellDef="let element">
-          <button mat-button (click)="addSubject(element.name, element.major, element.subjectId, element.credit, element.time, element.professor, element.lectureTime, element.lectureRoom, element.isCyber)"> {{element.addbutton}} </button>
+          <button mat-button (click)="addSubject(element.name, element.major, element.courseNumber, element.credit, element.time, element.professor, element.lectureTime, element.lectureRoom, element.isCyber)"> {{element.addbutton}} </button>
           <!--<button mat-button (click)="addSubject('a','b','c',1111111,222222,'d','e','f',true)"> {{element.addbutton}} </button>-->
         </mat-cell>
       </ng-container>

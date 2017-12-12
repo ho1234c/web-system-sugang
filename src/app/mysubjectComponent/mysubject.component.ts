@@ -1,8 +1,8 @@
-import {Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { Subjectselect } from '../subject/subjectselect';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Subject } from '../subject/Subject';
 import { HttpService } from '../http.service';
-import {DataSource} from '@angular/cdk/collections';
-import {Observable} from 'rxjs/Observable';
+import { DataSource } from '@angular/cdk/collections';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 
 
@@ -13,9 +13,9 @@ import 'rxjs/add/observable/of';
 })
 
 export class mysubjectComponent implements OnInit {
-  displayedColumns = ['name', 'major', 'subjectId', 'credit', 'time', 'professor', 'lectureTime', 'lectureRoom', 'isCyber', 'addbutton'];
-  dataSource2: any;
-  mySubjectDBs1: Subjectselect[];
+  displayedColumns = ['name', 'major', 'courseNumber', 'credit', 'time', 'professor', 'lectureTime', 'lectureRoom', 'isCyber', 'addbutton'];
+  dataSource: any;
+  mySubjectDBs1: Subject[];
 
   ngOnInit() {
     this.loadSubject();
@@ -26,17 +26,13 @@ export class mysubjectComponent implements OnInit {
   loadSubject(): any {
     this.httpService.loadSubjectService().subscribe(result =>
     {
-      // this.mySubjectDBs1 = result;
-      console.log(result);
-      console.log(result[0]);
       for (let i in result) {
         if (result.hasOwnProperty(i) != null) {
           this.mySubjectDBs1.push(result[i]);
           this.mySubjectDBs1[i].addbutton = '삭제';
         }
       }
-      console.log(this.mySubjectDBs1);
-      this.dataSource2 = new SubjectDataSource(this.mySubjectDBs1);
+      this.dataSource = new SubjectDataSource(this.mySubjectDBs1);
       this.changeDetectorRefs.detectChanges();
     });
   }
