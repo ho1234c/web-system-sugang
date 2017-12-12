@@ -1,46 +1,43 @@
 <header>
     <nav>
-        <div fxLayout="row" fxLayoutAlign="start center" class="content">
-            <div fxFlex="20%">
-              <img src="../assets/intro_ajou_symbol.png" height="50" width="50"/>
-              <a mat-raised-button routerLink="main"> Main </a>
-              <a mat-raised-button routerLink="table"> Time Table </a>
-            </div>
+        <div class="logo">
+            <img src="../assets/intro_ajou_symbol.png" height="50" width="50" />
+        </div>
+        <div class="menu">
+            <a mat-raised-button routerLink="main"> Main </a>
+            <a mat-raised-button routerLink="table"> Time Table </a>
+        </div>
+        <div class="info">
+            <span>이름 : {{name}} </span>
+            <span class="spacer"></span>
+            <span>학과 : {{department}} </span>
+            <span class="spacer"></span>
+            <span>학년 : {{grade}}학년</span>
+            <span class="spacer"></span>
+            <span>최대신청학점 : {{maxPoint}}</span>
+        </div>
 
-            <div fxFlex="60%">
-              <span>이름 : {{name}} </span>
-              <span class="spacer"></span>
-              <span>학과 : {{department}} </span>
-              <span class="spacer"></span>
-              <span>학년 : {{grade}}학년</span>
-              <span class="spacer"></span>
-              <span>최대신청학점 : {{maxPoint}}</span>
-            </div>
-
-            <div fxFlex>
-                <button mat-icon-button [matMenuTriggerFor]="matmenu">
-                    <mat-icon>public</mat-icon>
+        <div class="auth">
+            <button mat-icon-button [matMenuTriggerFor]="matmenu">
+                <mat-icon>public</mat-icon>
+            </button>
+            <mat-menu #matmenu="matMenu">
+                <button mat-menu-item (click)="showDialog = 1" class="btn">
+                    <mat-icon>flag</mat-icon>
+                    <span> Log IN </span>
                 </button>
-                <mat-menu #matmenu="matMenu"   >
-                    <button mat-menu-item (click)="showDialog = 1"class="btn">
-                        <mat-icon>flag</mat-icon>
-                        <span>  Log IN </span>
-                    </button>
-                  <button mat-menu-item>
+                <button mat-menu-item>
                     <mat-icon>flag</mat-icon>
-                    <span>  Log OUT </span>
-                  </button>
-                  <button mat-menu-item (click)="showDialog = 2"class="btn">
+                    <span> Log OUT </span>
+                </button>
+                <button mat-menu-item (click)="showDialog = 2" class="btn">
                     <mat-icon>flag</mat-icon>
-                    <span>  Register </span>
-                  </button>
-                </mat-menu>
-            </div>
-
+                    <span> Register </span>
+                </button>
+            </mat-menu>
         </div>
     </nav>
 </header>
 
 
 <app-modal [(visible)]="showDialog"></app-modal>
-
