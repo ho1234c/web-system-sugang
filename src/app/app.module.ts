@@ -27,19 +27,9 @@ import { MatListModule, MatToolbarModule, MatGridListModule, MatInputModule, Mat
   MatPaginatorModule, MatRadioModule, MatRippleModule, MatSidenavModule, MatSlideToggleModule, MatSortModule, MatTableModule,
   MatTabsModule, MatStepperModule
   } from '@angular/material';
-<<<<<<< HEAD
-
-// import {MaterialModule} from './material.module';
-=======
->>>>>>> origin/ksy
 import { AnnounceComponent } from './announceComponent/announce.component';
 import { SearchComponent } from './searchComponent/search.component';
 import { JoinComponent } from './joinComponent/join.component';
-
-
-
-import { HttpClientModule } from '@angular/common/http';
-import { HttpService } from './HttpService';
 
 @NgModule({
   declarations: [
@@ -50,21 +40,12 @@ import { HttpService } from './HttpService';
     BrowserModule,  FormsModule, routing,
     MatListModule, MatToolbarModule, MatGridListModule, MatInputModule, MatFormFieldModule, MatSelectModule, MatOptionModule, MatButtonModule,
     MatIconModule, MatMenuModule, MatAutocompleteModule, MatCardModule, MatDialogModule, MatProgressBarModule, MatProgressSpinnerModule, MatSliderModule,
-<<<<<<< HEAD
-    BrowserAnimationsModule, MatSnackBarModule, MatTooltipModule, MatButtonToggleModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatExpansionModule, MatNativeDateModule,
-    MatPaginatorModule, MatRadioModule, MatRippleModule, MatSidenavModule, MatSlideToggleModule, MatSortModule, MatTableModule,
-    MatTabsModule, MatStepperModule, HttpClientModule,
-    // MaterialModule
-    BrowserAnimationsModule
-  ],
-  providers: [HttpService],
-=======
     MatSnackBarModule, MatTooltipModule, MatButtonToggleModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatExpansionModule, MatNativeDateModule,
     MatPaginatorModule, MatRadioModule, MatRippleModule, MatSidenavModule, MatSlideToggleModule, MatSortModule, MatTableModule, MatTabsModule, MatStepperModule,
     BrowserAnimationsModule, HttpClientModule, HttpModule
   ],
   providers: [ HttpService ],
->>>>>>> origin/ksy
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
