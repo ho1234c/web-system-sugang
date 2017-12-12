@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-<<<<<<< HEAD
 const Notice = require('../models/Notice');
 
 router.post('/createNotice', (req, res, next) => {
@@ -22,10 +21,9 @@ router.get('/getAllNotice', (req, res, next) => {
       return res.send(documents);
     });
 });
-=======
+
 // const User = require('../models/User');
 // const passwordHash = require('../lib/passwordHash');
-const Notice = require('../models/Notice');
 
 
 // var temp1 = {
@@ -60,5 +58,4 @@ router.get('/getAllNotice', function(req,res) {
     res.send(notices);
   })
 })
->>>>>>> origin/ksy
 module.exports = router;
