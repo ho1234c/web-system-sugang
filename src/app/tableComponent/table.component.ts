@@ -48,7 +48,6 @@ export class tableComponent implements OnInit {
       for (let i in result) {
         if (result.hasOwnProperty(i) != null) {
           this.mySubjectDBs1.push(result[i]);
-          this.mySubjectDBs1[i].addbutton = '삭제';
         }
       }
       this.loadInputTableDB();
