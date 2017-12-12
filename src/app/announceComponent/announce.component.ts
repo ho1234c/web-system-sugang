@@ -3,7 +3,7 @@ import {Input} from '@angular/compiler/src/core';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import { AnnounceSet } from '../mock.announce';
 import {Announce} from '../announce';
-import { HttpService } from '../HttpService';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-announce',
