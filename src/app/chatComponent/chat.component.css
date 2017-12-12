@@ -1,3 +1,51 @@
+<<<<<<< HEAD:src/app/chatComponent/chat.component.css
+=======
+mat-toolbar {
+  background-color: blue;
+  color: white;
+}
+
+mat-grid-tile {
+  outline-style: solid;
+  outline-color: gray;
+  background-color: aqua;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-card {
+  width: 100%;
+  height: 100%;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  min-width: 100%;
+}
+.example-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 100%;
+}
+
+.mat-accordion {
+  min-width: 100%;
+}
+
+>>>>>>> e7bdbc82c9db053da95c300c8dd12607662b1087:src/app/main.component.css
 /*챗팅*/
 body {
   font:12px arial;
@@ -34,7 +82,7 @@ a:hover { text-decoration:underline; }
   margin-bottom:25px;
   padding:10px;
   background:#fff;
-  height:270px;
+  height:250px;
   width:430px;
   border:1px solid #ACD8F0;
   overflow:auto; }

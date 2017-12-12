@@ -12,7 +12,7 @@ COPY . ./
 ENV NODE_ENV production
 
 # angular build
-RUN npm install -g @angular/cli
+RUN npm install --unsafe-perm -g @angular/cli
 RUN npm run build --production
 
 # open port

@@ -28,12 +28,29 @@ import { MatListModule, MatToolbarModule, MatGridListModule, MatInputModule, Mat
   MatTabsModule, MatStepperModule
   } from '@angular/material';
 // import {MaterialModule} from './material.module';
+<<<<<<< HEAD
+=======
+import { AnnounceComponent } from './announceComponent/announce.component';
+import { SearchComponent } from './searchComponent/search.component';
+import { ChattingComponent } from './chatting.component';
+import { JoinComponent } from './joinComponent/join.component';
+import { AppComponent } from './app.component';
+import { NavComponent } from './nav.component';
+import { MainComponent} from './main.component';
+import { TableComponent} from './table.component';
+>>>>>>> e7bdbc82c9db053da95c300c8dd12607662b1087
 
 
 
 @NgModule({
   declarations: [
+<<<<<<< HEAD
     AppComponent, navComponent, mainComponent, tableComponent, noticeComponent, addsubjectComponent, mysubjectComponent, chatComponent, modalComponent
+=======
+    AppComponent, ChattingComponent, AnnounceComponent, SearchComponent, JoinComponent,
+    // MaterialModule,
+    NavComponent, MainComponent, TableComponent, LoginModalComponent
+>>>>>>> e7bdbc82c9db053da95c300c8dd12607662b1087
   ],
   imports: [
     BrowserModule,  FormsModule, routing,
