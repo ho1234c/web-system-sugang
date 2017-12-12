@@ -18,11 +18,7 @@ module.exports = io => {
             const idx = userList.indexOf(user.displayname);
 
             if (idx > -1) userList.splice(idx, 1);
-<<<<<<< HEAD
 
-=======
-            
->>>>>>> origin/ksy
             io.emit('leave', userList);
         });
 

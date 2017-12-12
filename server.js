@@ -1,6 +1,6 @@
 // Get dependencies
 const express = require('express');
-// require('dotenv').config();
+require('dotenv').config();
 const path = require('path');
 const http = require('http');
 const logger = require('morgan');
@@ -32,6 +32,28 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
+const connectMongo = require('connect-mongo');
+const MongoStore = connectMongo(session);
+
+const sessionMiddleWare = session({
+  secret: 'jongho',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 2000 * 60 * 60
+  },
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection,
+    ttl: 14 * 24 * 60 * 60
+  })
+});
+
+app.use(sessionMiddleWare);
+
+// passport
+const passportConfig = require('./server/lib/passport');
+
+passportConfig(app);
 // Set api routes
 const user = require('./server/router/user');
 const subject = require('./server/router/subject');

@@ -16,7 +16,8 @@ import { modalComponent } from './modalComponent/modal.component';
 
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpService } from './HttpService';
+import { HttpService } from './http.service';
+import { AuthenticationService } from './loginService';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule, MatToolbarModule, MatGridListModule, MatInputModule, MatFormFieldModule,
@@ -44,7 +45,7 @@ import { JoinComponent } from './joinComponent/join.component';
     MatPaginatorModule, MatRadioModule, MatRippleModule, MatSidenavModule, MatSlideToggleModule, MatSortModule, MatTableModule, MatTabsModule, MatStepperModule,
     BrowserAnimationsModule, HttpClientModule, HttpModule
   ],
-  providers: [ HttpService ],
+  providers: [ HttpService, AuthenticationService ],
 
   bootstrap: [AppComponent]
 })

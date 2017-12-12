@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, OnChanges, EventEmitter } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-
+import { Router, ActivatedRoute } from '@angular/router';
+import { AuthenticationService} from '../loginService';
 
 @Component({
   selector: 'app-modal',
@@ -22,10 +23,41 @@ export class modalComponent implements OnInit {
   @Input() closable = true;
   @Input() visible: boolean;
   @Output() visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() isLogin: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor() { }
+  loading = false;
+  returnUrl: string;
 
-  ngOnInit() { }
+  id: string;
+  pw: string;
+  email: string;
+
+  constructor(private route: ActivatedRoute,
+              private router: Router,
+              private authenticationService: AuthenticationService) { }
+
+  ngOnInit() {
+    // reset login status
+    this.authenticationService.logout();
+
+    // get return url from route parameters or default to '/'
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';}
+
+  login() {
+    this.loading = true;
+    this.authenticationService.login(this.id, this.pw)
+      .subscribe(
+        data => {
+          if (data) {
+            this.close();
+            this.isLogin.emit(true);
+          }
+          //this.router.navigate([this.returnUrl]);
+        },
+        error => {
+          this.loading = false;
+        });
+  }
 
   close() {
     this.visible = false;

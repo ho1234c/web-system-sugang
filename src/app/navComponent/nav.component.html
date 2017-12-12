@@ -3,18 +3,18 @@
         <div fxLayout="row" fxLayoutAlign="start center" class="content">
             <div fxFlex="20%">
               <img src="../assets/intro_ajou_symbol.png" height="50" width="50"/>
-              <a mat-raised-button routerLink="main"> Main </a>
-              <a mat-raised-button routerLink="table"> Time Table </a>
+              <a mat-raised-button routerLink="main" *ngIf="logOn"> Main </a>
+              <a mat-raised-button routerLink="table" *ngIf="logOn"> Time Table </a>
             </div>
 
-            <div fxFlex="60%">
+            <div fxFlex="60%" *ngIf="logOn">
               <span>이름 : {{name}} </span>
               <span class="spacer"></span>
-              <span>학과 : {{department}} </span>
+              <span>학과 : {{major}} </span>
               <span class="spacer"></span>
               <span>학년 : {{grade}}학년</span>
               <span class="spacer"></span>
-              <span>최대신청학점 : {{maxPoint}}</span>
+              <span>최대신청학점 : {{maximum_credit}}</span>
             </div>
 
             <div fxFlex>
@@ -26,7 +26,7 @@
                         <mat-icon>flag</mat-icon>
                         <span>  Log IN </span>
                     </button>
-                  <button mat-menu-item>
+                  <button mat-menu-item (click)="logout()">
                     <mat-icon>flag</mat-icon>
                     <span>  Log OUT </span>
                   </button>
@@ -42,5 +42,5 @@
 </header>
 
 
-<app-modal [(visible)]="showDialog"></app-modal>
+<app-modal [(visible)]="showDialog" (isLogin)="isLogin($event)"></app-modal>
 

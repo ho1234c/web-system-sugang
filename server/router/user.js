@@ -9,11 +9,12 @@ router.post('/create', (req, res, next) => {
   const { email, password, displayName } = req.body;
   const user = new User({
     email,
-    password: passwordHash(req.body.password),
+    password: passwordHash(password),
     displayName
   });
 
   user.save(err => {
+    console.log('test');
     if(err) {
       return next(err);
     }
@@ -32,7 +33,10 @@ router.post('/login', (req, res, next) => {
     const userData = {
       email: user.email,
       displayName: user.displayName,
-      subjects: user.subjects
+      subjects: user.subjects,
+      grade: user.grade,
+      major: user.major,
+      maximum_credit: user.maximum_credit
     };
 
     return req.logIn(userData, err => {

@@ -9,7 +9,6 @@ const NoticeSchema = new Schema({
   created_at: { type: Date, default: Date.now() }
 });
 
-NoticeSchema.plugin(autoIncrement.plugin, 'Notice');
 module.exports = mongoose.model('Notice', NoticeSchema);
 
 

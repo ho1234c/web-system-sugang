@@ -13,7 +13,6 @@ export class JoinComponent {
   joinList = CourseSet;
   @ViewChild('form') myform;
   displayedColumns = ['subjectId', 'name', 'credit', 'lectureTime', 'lectureRoom', 'professor', 'seats', 'major', 'drop'];
-
   dataSource = new MatTableDataSource<Course>(this.joinList);
 
   // this.myform.resetForm();

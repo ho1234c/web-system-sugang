@@ -3,7 +3,7 @@ import {Input} from '@angular/compiler/src/core';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import { AnnounceSet } from '../mock.announce';
 import {Announce} from '../announce';
-import { HttpService } from '../HttpService';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-announce',
@@ -52,9 +52,6 @@ export class AnnounceComponent implements OnInit {
         this.announceList.push(new Announce(1, result[i].title, result[i].body));
       }
     });
-  }
-  createAnnounce() {
-    this.httpService.addAnnounce(this.announceList.pop());
   }
   */
 }
