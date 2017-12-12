@@ -1,5 +1,28 @@
 const express = require('express');
 const router = express.Router();
+<<<<<<< HEAD
+const Notice = require('../models/Notice');
+
+router.post('/createNotice', (req, res, next) => {
+  const Notice = new Notice({
+    title: req.body.title,
+    body: req.body.content
+  });
+  notice.save(err => {
+    if(err) console.log(err);
+    res.send('success');
+  })
+});
+
+router.get('/getAllNotice', (req, res, next) => {
+  console.log('tt');
+    Notice.find((err, documents) => {
+      if(err)
+        return console.log(err);
+      return res.send(documents);
+    });
+});
+=======
 // const User = require('../models/User');
 // const passwordHash = require('../lib/passwordHash');
 const Notice = require('../models/Notice');
@@ -37,4 +60,5 @@ router.get('/getAllNotice', function(req,res) {
     res.send(notices);
   })
 })
+>>>>>>> origin/ksy
 module.exports = router;

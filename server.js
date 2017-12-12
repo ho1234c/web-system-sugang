@@ -39,7 +39,8 @@ const notice = require('./server/router/notice');
 
 app.use('/api/user', user);
 app.use('/api/subject', subject);
-app.use('/api/notice', notice)
+app.use('/api/notice', notice);
+
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {

@@ -2,221 +2,24 @@
 
 <div>
   <mat-grid-list cols="2" rowHeight="600px">
-    <!--// 1-->
     <mat-grid-tile>
-<<<<<<< HEAD
-      <!--<app-setting></app-setting>-->
-      <mat-accordion>
-        <mat-expansion-panel  *ngFor="let noticeDB of noticeDBs">
-=======
       <mat-card>
       <app-announce></app-announce>
-      <!--<mat-accordion>
-        <mat-expansion-panel>
->>>>>>> 087dda683690fe12cc313c8d3487c3672fc7fcba
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-            {{noticeDB.major}}
-            </mat-panel-title>
-            <mat-panel-description>
-            {{noticeDB.title}}
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <a> {{noticeDB.body}} </a>
-        </mat-expansion-panel>
-<<<<<<< HEAD
-      </mat-accordion>
-=======
-      </mat-accordion>-->
       </mat-card>
->>>>>>> 087dda683690fe12cc313c8d3487c3672fc7fcba
-    </mat-grid-tile>
-
-
-    <!--// 2-->
+  </mat-grid-tile>
     <mat-grid-tile>
-      <!--<div class="example-container mat-elevation-z8">-->
-        <!--<div class="example-header">-->
-          <!--<mat-form-field>-->
-            <!--<input matInput (keyup)="applyFilter($event.target.value)" placeholder="검색(키워드 입력)">-->
-          <!--</mat-form-field>-->
-        <!--</div>-->
       <mat-card>
       <app-search></app-search>
       </mat-card>
-      <!--<div class="example-container mat-elevation-z8">
->>>>>>> 087dda683690fe12cc313c8d3487c3672fc7fcba
-        <mat-table #table [dataSource]="dataSource">
-          &lt;!&ndash; Position Column &ndash;&gt;
-          <ng-container matColumnDef="name">
-            <mat-header-cell *matHeaderCellDef> NAME </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
-          </ng-container>
-
-          <ng-container matColumnDef="major">
-            <mat-header-cell *matHeaderCellDef> MAJOR </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.major}} </mat-cell>
-          </ng-container>
-
-          &lt;!&ndash; Name Column &ndash;&gt;
-          <ng-container matColumnDef="subjectId">
-            <mat-header-cell *matHeaderCellDef> SUBJECTID </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.subjectId}} </mat-cell>
-          </ng-container>
-
-          &lt;!&ndash; Weight Column &ndash;&gt;
-          <ng-container matColumnDef="credit">
-            <mat-header-cell *matHeaderCellDef> CREDIT </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.credit}} </mat-cell>
-          </ng-container>
-
-          &lt;!&ndash; Weight Column &ndash;&gt;
-          <ng-container matColumnDef="time">
-            <mat-header-cell *matHeaderCellDef> TIME </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.time}} </mat-cell>
-          </ng-container>
-
-          &lt;!&ndash; Weight Column &ndash;&gt;
-          <ng-container matColumnDef="professor">
-            <mat-header-cell *matHeaderCellDef> PROFESSOR </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.professor}} </mat-cell>
-          </ng-container>
-
-          &lt;!&ndash; Weight Column &ndash;&gt;
-          <ng-container matColumnDef="lectureTime">
-            <mat-header-cell *matHeaderCellDef> LECTURETIME </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.lectureTime}} </mat-cell>
-          </ng-container>
-
-          &lt;!&ndash; Weight Column &ndash;&gt;
-          <ng-container matColumnDef="lectureRoom">
-            <mat-header-cell *matHeaderCellDef> LECTUREROOM </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.lectureRoom}} </mat-cell>
-          </ng-container>
-
-          &lt;!&ndash; Weight Column &ndash;&gt;
-          <ng-container matColumnDef="isCyber">
-            <mat-header-cell *matHeaderCellDef> ISCYBER </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.isCyber}} </mat-cell>
-          </ng-container>
-
-          &lt;!&ndash; Weight Column &ndash;&gt;
-          <ng-container matColumnDef="addbutton">
-            <mat-header-cell *matHeaderCellDef> BUTTON </mat-header-cell>
-            <mat-cell *matCellDef="let element">
-              <button mat-button (click)="addSubject(element.name, element.major, element.subjectId, element.credit, element.time, element.professor, element.lectureTime, element.lectureRoom, element.isCyber)"> {{element.addbutton}} </button>
-              <!--<button mat-button (click)="addSubject('a','b','c',1111111,222222,'d','e','f',true)"> {{element.addbutton}} </button>-->
-            </mat-cell>
-          </ng-container>
-          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-        </mat-table>
-      </div>-->
     </mat-grid-tile>
-
-
-    <!--// 3-->
-    <mat-grid-tile>
+<mat-grid-tile>
       <mat-card>
         <app-join></app-join>
       </mat-card>
-      <!--<div class="example-container mat-elevation-z8">
-        <mat-table #table [dataSource]="dataSource2">
-          &lt;!&ndash; Position Column &ndash;&gt;
-          <ng-container matColumnDef="name">
-            <mat-header-cell *matHeaderCellDef> NAME </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
-          </ng-container>
-
-          <ng-container matColumnDef="major">
-            <mat-header-cell *matHeaderCellDef> MAJOR </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.major}} </mat-cell>
-          </ng-container>
-
-          &lt;!&ndash; Name Column &ndash;&gt;
-          <ng-container matColumnDef="subjectId">
-            <mat-header-cell *matHeaderCellDef> SUBJECTID </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.subjectId}} </mat-cell>
-          </ng-container>
-
-          &lt;!&ndash; Weight Column &ndash;&gt;
-          <ng-container matColumnDef="credit">
-            <mat-header-cell *matHeaderCellDef> CREDIT </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.credit}} </mat-cell>
-          </ng-container>
-
-          &lt;!&ndash; Weight Column &ndash;&gt;
-          <ng-container matColumnDef="time">
-            <mat-header-cell *matHeaderCellDef> TIME </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.time}} </mat-cell>
-          </ng-container>
-
-          &lt;!&ndash; Weight Column &ndash;&gt;
-          <ng-container matColumnDef="professor">
-            <mat-header-cell *matHeaderCellDef> PROFESSOR </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.professor}} </mat-cell>
-          </ng-container>
-
-          &lt;!&ndash; Weight Column &ndash;&gt;
-          <ng-container matColumnDef="lectureTime">
-            <mat-header-cell *matHeaderCellDef> LECTURETIME </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.lectureTime}} </mat-cell>
-          </ng-container>
-
-          &lt;!&ndash; Weight Column &ndash;&gt;
-          <ng-container matColumnDef="lectureRoom">
-            <mat-header-cell *matHeaderCellDef> LECTUREROOM </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.lectureRoom}} </mat-cell>
-          </ng-container>
-
-          &lt;!&ndash; Weight Column &ndash;&gt;
-          <ng-container matColumnDef="isCyber">
-            <mat-header-cell *matHeaderCellDef> ISCYBER </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.isCyber}} </mat-cell>
-          </ng-container>
-
-          &lt;!&ndash; Weight Column &ndash;&gt;
-          <ng-container matColumnDef="addbutton">
-            <mat-header-cell *matHeaderCellDef> BUTTON </mat-header-cell>
-            <mat-cell *matCellDef="let element">
-              <button mat-button (click)="removeSubject(element.name)"> {{element.addbutton}} </button>
-            </mat-cell>
-          </ng-container>
-
-          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-        </mat-table>
-      </div>-->
     </mat-grid-tile>
-
-
-    <!--// 4-->
     <mat-grid-tile>
       <mat-card>
-      <!--<app-chatting></app-chatting>-->
-      <div id="wrapper" style="min-width: 80%; min-height: 100%">
-        <div id="menu">
-          <p class="welcome">Welcome, <b></b></p>
-          <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
-          <div style="clear:both"></div>
-        </div>
-
-        <div id="chatbox" style="min-width: 80%; min-height: 90%; "></div>
-
-        <div style=" text-align: center; ">
-          <form name="message" action="">
-          <input name="usermsg" type="text" id="usermsg" size="100"/>
-          <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
-        </form>
-        </div>
-      </div>
-      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
-      <script type="text/javascript">
-        // jQuery Document
-        $(document).ready(function(){
-
-        });
-      </script>
+      <app-chat></app-chat>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>

@@ -11,7 +11,8 @@ const SubjectSchema = new Schema({
   lectureTime: String,
   lectureRoom: String,
   isCyber: { type: Boolean, default: false },
-  created_at: { type: Date, default: Date.now() }
+  created_at: { type: Date, default: Date.now() },
+  seats: { type: Number, required: true }
 });
 
 module.exports = mongoose.model('Subject', SubjectSchema);

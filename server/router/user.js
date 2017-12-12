@@ -7,9 +7,8 @@ const passwordHash = require('../lib/passwordHash');
 
 router.post('/create', (req, res, next) => {
   const { email, password, displayName } = req.body;
-
   const user = new User({
-    email, 
+    email,
     password: passwordHash(req.body.password),
     displayName
   });
@@ -33,7 +32,7 @@ router.post('/login', (req, res, next) => {
     const userData = {
       email: user.email,
       displayName: user.displayName,
-      subjects: user.subjects 
+      subjects: user.subjects
     };
 
     return req.logIn(userData, err => {
@@ -65,7 +64,7 @@ router.post('/add/:userId', (req, res, next) => {
       })
     })
   });
-  
+
 })
 
 module.exports = router;

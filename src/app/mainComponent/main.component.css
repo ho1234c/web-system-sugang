@@ -5,7 +5,9 @@ mat-toolbar {
 mat-grid-tile {
   background-color: aqua;
 }
-
+.mat-card {
+  width: 100%;
+}
 .spacer {
   flex: 1 1 auto;
 }
