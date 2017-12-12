@@ -1,7 +1,7 @@
 export interface Subjectselect {
   name: string;
   major: string;
-  subjectId: number;
+  subjectId: string;
   credit: number;
   time: number;
   professor: string;

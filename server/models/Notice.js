@@ -11,3 +11,5 @@ const NoticeSchema = new Schema({
 
 NoticeSchema.plugin(autoIncrement.plugin, 'Notice');
 module.exports = mongoose.model('Notice', NoticeSchema);
+
+

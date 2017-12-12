@@ -6,7 +6,11 @@ const passwordHash = require('../lib/passwordHash');
 
 
 router.post('/create', (req, res, next) => {
+<<<<<<< HEAD
   const User = new User({
+=======
+  const user = new User({
+>>>>>>> origin/ksy
     email: req.body.email,
     password: passwordHash(req.body.password),
     displayName: req.body.displayName

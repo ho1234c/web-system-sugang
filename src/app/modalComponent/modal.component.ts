@@ -3,7 +3,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 
 
 @Component({
-  selector: 'app-modal-login',
+  selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css'],
   animations: [
@@ -18,7 +18,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     ])
   ]
 })
-export class LoginModalComponent implements OnInit {
+export class modalComponent implements OnInit {
   @Input() closable = true;
   @Input() visible: boolean;
   @Output() visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();

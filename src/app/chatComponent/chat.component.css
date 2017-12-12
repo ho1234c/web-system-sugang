@@ -1,3 +1,5 @@
+<<<<<<< HEAD:src/app/chatComponent/chat.component.css
+=======
 mat-toolbar {
   background-color: blue;
   color: white;
@@ -24,6 +26,15 @@ mat-card {
   max-height: 100%;
   min-width: 100%;
 }
+.example-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
 
 .mat-table {
   overflow: auto;
@@ -34,6 +45,7 @@ mat-card {
   min-width: 100%;
 }
 
+>>>>>>> e7bdbc82c9db053da95c300c8dd12607662b1087:src/app/main.component.css
 /*챗팅*/
 body {
   font:12px arial;
@@ -79,7 +91,7 @@ a:hover { text-decoration:underline; }
   width:395px;
   border:1px solid #ACD8F0;
   margin:0 auto;
-  }
+}
 #subitmsg {
   margin:0 auto;
 }
