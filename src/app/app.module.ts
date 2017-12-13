@@ -5,11 +5,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routing } from './app.routes';
 
 import { AppComponent } from './app.component';
-import { navComponent } from './navComponent/nav.component';
-import { mainComponent} from './mainComponent/main.component';
-import { tableComponent} from './tableComponent/table.component';
-import { chatComponent } from './chatComponent/chat.component';
-import { modalComponent } from './modalComponent/modal.component';
+import { NavComponent } from './navComponent/nav.component';
+import { MainComponent} from './mainComponent/main.component';
+import { TableComponent} from './tableComponent/table.component';
+import { ChatComponent } from './chatComponent/chat.component';
+import { ModalComponent } from './modalComponent/modal.component';
 
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
@@ -31,7 +31,7 @@ import { JoinComponent } from './joinComponent/join.component';
 
 @NgModule({
   declarations: [
-    AppComponent, navComponent, mainComponent, tableComponent, chatComponent, modalComponent, AnnounceComponent, SearchComponent, JoinComponent
+    AppComponent, NavComponent, MainComponent, TableComponent, ChatComponent, ModalComponent, AnnounceComponent, SearchComponent, JoinComponent
   ],
   imports: [
     BrowserModule,  FormsModule, routing,

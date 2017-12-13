@@ -15,7 +15,7 @@ export class AnnounceComponent implements OnInit {
   announceColumns = ['announceId', 'title'];
 
   constructor(private httpService: HttpService) {}
-  
+
   ngOnInit() {
     this.loadNotice();
   }

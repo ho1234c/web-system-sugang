@@ -15,12 +15,12 @@ export class ChattingComponent implements OnInit {
   constructor() {
     this.socket.on('connection', () => {
       console.log('connect success');
-      //socket.on('join', function(data){})
+      // socket.on('join', function(data){})
     });
-    //this.socket.on('leave', function (data) {})
-    //this.socket.on('server message', function (msg) {
-    //this.addMessage(msg);
-    //});
+    // this.socket.on('leave', function (data) {})
+    // this.socket.on('server message', function (msg) {
+    // this.addMessage(msg);
+    // });
   }
       ngOnInit() {
         for (let i = 0; i < maxmsg; i++) {

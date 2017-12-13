@@ -15,9 +15,9 @@ export class SearchComponent {
   selected: string;
   dataSource: MatTableDataSource<Subject>;
 
-  constructor(private httpService: HttpService) {}  
+  constructor(private httpService: HttpService) {}
 
-  ngOnInit() {
+  OnInit() {
     this.loadSubject();
   }
 
@@ -28,10 +28,9 @@ export class SearchComponent {
   }
 
   addSubject(subjectId: string) {
-    console.log(subjectId);
     this.httpService.addSubjectService(subjectId).subscribe((result: any) => {
       window.alert('신청되었습니다.');
-    })
+    });
   }
 
   applyFilter(filterValue: string) {

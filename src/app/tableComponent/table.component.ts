@@ -3,7 +3,18 @@ import { HttpService } from '../http.service';
 import { Subject } from '../subject/Subject';
 import { DataSource } from '@angular/cdk/collections';
 import { Observable } from 'rxjs/Observable';
-import { inputTable } from '../subject/inputTable';
+import { InputTable } from '../subject/inputTable';
+
+export class Source extends DataSource<any> {
+  constructor (private inputtable) {
+    super();
+  }
+  connect(): Observable<any> {
+    return;
+    // return Observable.of(this.inputtable);
+  }
+  disconnect() {}
+}
 
 @Component({
   selector: 'app-table',
@@ -11,14 +22,14 @@ import { inputTable } from '../subject/inputTable';
   styleUrls: ['./table.component.css']
 })
 
-export class tableComponent implements OnInit {
+export class TableComponent implements OnInit {
   mySubjectDBs1: Subject[];
-  inputTableDB: inputTable[];
+  inputTableDB: InputTable[];
   tempParsing: string[];
   time: string[];
-
   displayedColumns = ['time', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
   dataSource2: any;
+  f: boolean;
 
   ngOnInit() {
     this.loadSubject();
@@ -28,20 +39,18 @@ export class tableComponent implements OnInit {
       'E(1500)', 'E(1530)', 'E(1600)', 'F(1630)', 'F(1700)', 'F(1730)', 'G(1800)', 'G(1830)', 'G(1900)'];
 
     this.time.forEach(el => {
-      const t = new inputTable(el, '', '', '', '', '');
+      const t = new InputTable(el, '', '', '', '', '');
       this.inputTableDB.push(t);
     });
   }
 
-  f: boolean;
   constructor(private httpService: HttpService, private changeDetectorRefs: ChangeDetectorRef) {
     this.f = false;
   }
 
   loadSubject(): any {
-    this.httpService.loadSubjectService().subscribe(result =>
-    {
-      for (let i in result) {
+    this.httpService.loadSubjectService().subscribe(result => {
+      for (const i in result) {
         if (result.hasOwnProperty(i) != null) {
           this.mySubjectDBs1.push(result[i]);
         }
@@ -201,7 +210,7 @@ export class tableComponent implements OnInit {
         this.inputTableDB[10].friday = this.mySubjectDBs1[i].name + '\n' + '(' + this.mySubjectDBs1[i].lectureRoom + ')';
       } else if (this.tempParsing[0] === '금' && this.tempParsing[1] === 'D') {
         this.inputTableDB[11].friday = this.mySubjectDBs1[i].name + '\n' + '(' + this.mySubjectDBs1[i].lectureRoom + ')';
-        this.inputTableDB[12].friday = this.mySubjectDBs1[i].name+ '\n' + '(' + this.mySubjectDBs1[i].lectureRoom + ')';
+        this.inputTableDB[12].friday = this.mySubjectDBs1[i].name + '\n' + '(' + this.mySubjectDBs1[i].lectureRoom + ')';
         this.inputTableDB[13].friday = this.mySubjectDBs1[i].name + '\n' + '(' + this.mySubjectDBs1[i].lectureRoom + ')';
       } else if (this.tempParsing[0] === '금' && this.tempParsing[1] === 'E') {
         this.inputTableDB[14].friday = this.mySubjectDBs1[i].name + '\n' + '(' + this.mySubjectDBs1[i].lectureRoom + ')';
@@ -218,19 +227,9 @@ export class tableComponent implements OnInit {
       }
 
       }
-    this.dataSource2 = new SubjectDataSource(this.inputTableDB);
+    this.dataSource2 = new Source(this.inputTableDB);
     this.changeDetectorRefs.detectChanges();
   }
-}
-export class SubjectDataSource extends DataSource<any> {
-  constructor (private inputtable) {
-    super();
-  }
-  connect(): Observable<any> {
-    return;
-    // return Observable.of(this.inputtable);
-  }
-  disconnect() {}
 }
 
 

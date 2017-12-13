@@ -6,7 +6,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./nav.component.scss']
 })
 
-export class navComponent {
+export class NavComponent {
   name: string;
   major: string;
   maximum_credit: number;

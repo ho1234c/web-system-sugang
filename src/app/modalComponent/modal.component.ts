@@ -19,7 +19,7 @@ import { AuthenticationService } from '../loginService';
     ])
   ]
 })
-export class modalComponent implements OnInit {
+export class ModalComponent implements OnInit {
   @Input() closable = true;
   @Input() visible: boolean;
   @Output() visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();

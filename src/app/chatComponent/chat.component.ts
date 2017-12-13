@@ -11,7 +11,7 @@ const maxmsg = 6;
 })
 
 @Injectable()
-export class chatComponent implements OnInit {
+export class ChatComponent implements OnInit {
   ngOnInit() {
 
   }
