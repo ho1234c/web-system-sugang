@@ -4,12 +4,12 @@
 
 -----
 
-### start
-make .env
+## start
+make `.env` before start app
 
 ```
-DB_HOST=DB 호스트
-DB_PORT=DB 포트
-DB_NAME=DB 이름
-PORT=앱이 실행 될 포트번호
+DB_HOST=데이터베이스 호스트 이름을 입력해주세요
+DB_PORT=데이터베이스 포트번호를 입력해주세요
+DB_NAME=데이터베이스 이름을 입력해주세요
+PORT=앱이 실행 될 포트번호를 입력해주세요
 ```
