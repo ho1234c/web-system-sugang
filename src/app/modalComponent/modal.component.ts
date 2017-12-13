@@ -41,7 +41,7 @@ export class modalComponent implements OnInit {
     this.authenticationService.logout();
 
     // get return url from route parameters or default to '/'
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';}
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';};
 
   login() {
     this.loading = true;
@@ -49,10 +49,10 @@ export class modalComponent implements OnInit {
       .subscribe(
         data => {
           if (data) {
+            this.router.navigate([this.returnUrl]);
             this.close();
             this.isLogin.emit(true);
           }
-          //this.router.navigate([this.returnUrl]);
         },
         error => {
           this.loading = false;
