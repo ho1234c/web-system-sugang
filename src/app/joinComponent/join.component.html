@@ -1,53 +1,55 @@
-<div class="example-container mat-elevation-z8">
-  <mat-table #table [dataSource]="dataSource">
+<mat-card>
+  <div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource">
+      <ng-container matColumnDef="courseNumber">
+        <mat-header-cell *matHeaderCellDef> 과목코드 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.courseNumber}} </mat-cell>
+      </ng-container>
 
-    <ng-container matColumnDef="subjectId">
-      <mat-header-cell *matHeaderCellDef> 과목코드 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.subjectId}} </mat-cell>
-    </ng-container>
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> 강의명 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
 
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef> 강의명 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
-    </ng-container>
+      <ng-container matColumnDef="credit">
+        <mat-header-cell *matHeaderCellDef> 학점 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.credit}} </mat-cell>
+      </ng-container>
 
-    <ng-container matColumnDef="credit">
-      <mat-header-cell *matHeaderCellDef> 학점 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.credit}} </mat-cell>
-    </ng-container>
+      <ng-container matColumnDef="lectureTime">
+        <mat-header-cell *matHeaderCellDef> 강의시간 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.lectureTime}} </mat-cell>
+      </ng-container>
 
-    <ng-container matColumnDef="lectureTime">
-      <mat-header-cell *matHeaderCellDef> 강의시간 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.lectureTime}} </mat-cell>
-    </ng-container>
+      <ng-container matColumnDef="lectureRoom">
+        <mat-header-cell *matHeaderCellDef> 강의실 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.lectureRoom}} </mat-cell>
+      </ng-container>
 
-    <ng-container matColumnDef="lectureRoom">
-      <mat-header-cell *matHeaderCellDef> 강의실 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.lectureRoom}} </mat-cell>
-    </ng-container>
+      <ng-container matColumnDef="professor">
+        <mat-header-cell *matHeaderCellDef> 교수 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.professor}} </mat-cell>
+      </ng-container>
 
-    <ng-container matColumnDef="professor">
-      <mat-header-cell *matHeaderCellDef> 교수 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.professor}} </mat-cell>
-    </ng-container>
+      <ng-container matColumnDef="seats">
+        <mat-header-cell *matHeaderCellDef> 여석 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.seats}} </mat-cell>
+      </ng-container>
 
-    <ng-container matColumnDef="seats">
-      <mat-header-cell *matHeaderCellDef> 여석 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.seats}} </mat-cell>
-    </ng-container>
+      <ng-container matColumnDef="major">
+        <mat-header-cell *matHeaderCellDef> 전공 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.major}} </mat-cell>
+      </ng-container>
 
-    <ng-container matColumnDef="major">
-      <mat-header-cell *matHeaderCellDef> 전공 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.major}} </mat-cell>
-    </ng-container>
+      <ng-container matColumnDef="drop">
+        <mat-header-cell *matHeaderCellDef> 취소 </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <input type="button" value="취소" (click)="drop(element.courseNumber)">
+        </mat-cell>
+      </ng-container>
 
-    <ng-container matColumnDef="drop">
-      <mat-header-cell *matHeaderCellDef> 취소 </mat-header-cell>
-      <mat-cell *matCellDef="let element">
-        <input type="button" value="취소" (click)="drop(element.subjectId)"></mat-cell>
-    </ng-container>
-
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-  </mat-table>
-</div>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+</mat-card>

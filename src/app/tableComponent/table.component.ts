@@ -1,9 +1,11 @@
-import {Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { HttpService } from '../http.service';
-import { Subjectselect } from '../subject/subjectselect';
-import {DataSource} from '@angular/cdk/collections';
-import {Observable} from 'rxjs/Observable';
+import { subjects } from '../subject/mock.subject';
+import { Subject } from '../subject/Subject';
+import { DataSource } from '@angular/cdk/collections';
+import { Observable } from 'rxjs/Observable';
 import { inputTable } from '../subject/inputTable';
+
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -12,7 +14,7 @@ import { inputTable } from '../subject/inputTable';
 
 export class tableComponent implements OnInit {
 
-  mySubjectDBs1: Subjectselect[];
+  mySubjectDBs1: Subject[];
   inputTableDB: inputTable[];
   tempParsing: string[];
   time: string[];
@@ -46,7 +48,6 @@ export class tableComponent implements OnInit {
       for (let i in result) {
         if (result.hasOwnProperty(i) != null) {
           this.mySubjectDBs1.push(result[i]);
-          this.mySubjectDBs1[i].addbutton = '삭제';
         }
       }
       this.loadInputTableDB();
@@ -230,7 +231,8 @@ export class SubjectDataSource extends DataSource<any> {
     super();
   }
   connect(): Observable<any> {
-    return Observable.of(this.inputtable);
+    return;
+    // return Observable.of(this.inputtable);
   }
   disconnect() {}
 }

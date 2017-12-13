@@ -13,7 +13,6 @@ const session = require('express-session');
 // connect MongoDB
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-const autoIncrement = require('mongoose-auto-increment');
 
 const db = mongoose.connection;
 db.on('error', console.error);
@@ -36,6 +35,7 @@ const connectMongo = require('connect-mongo');
 const MongoStore = connectMongo(session);
 
 const sessionMiddleWare = session({
+<<<<<<< HEAD
   secret: 'jongho',
   resave: false,
   saveUninitialized: true,
@@ -46,6 +46,18 @@ const sessionMiddleWare = session({
     mongooseConnection: mongoose.connection,
     ttl: 14 * 24 * 60 * 60
   })
+=======
+    secret: 'jongho',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      maxAge: 2000 * 60 * 60
+    },
+    store: new MongoStore({
+        mongooseConnection: mongoose.connection,
+        ttl: 14 * 24 * 60 * 60
+    })
+>>>>>>> origin/master
 });
 
 app.use(sessionMiddleWare);
@@ -54,6 +66,10 @@ app.use(sessionMiddleWare);
 const passportConfig = require('./server/lib/passport');
 
 passportConfig(app);
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 // Set api routes
 const user = require('./server/router/user');
 const subject = require('./server/router/subject');

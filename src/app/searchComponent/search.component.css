@@ -1,24 +1,19 @@
-.example-container {
+mat-form-field {
+  width: 500px;
+  padding: 10px;
+}
+
+.search {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
-}
-mat-card {
-  width: 100%;
-}
-
-.example-header {
-  min-height: 10px;
-  padding: 3px 2px 0;
-}
-
-.mat-form-field {
-  font-size: 6pt;
-  width: 60%;
+  height: 400px;
 }
 
 .mat-table {
   overflow: auto;
   max-height: 500px;
+}
+
+.mat-card {
+  box-shadow: none;
 }

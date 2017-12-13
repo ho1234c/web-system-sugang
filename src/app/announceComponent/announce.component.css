@@ -1,6 +1,15 @@
 .mat-column-announceId {
   max-width: 10%;
 }
+
 .mat-column-title {
   max-width: 90%;
+}
+
+.announce {
+  height: 400px
+}
+
+.mat-card {
+  box-shadow: none;
 }

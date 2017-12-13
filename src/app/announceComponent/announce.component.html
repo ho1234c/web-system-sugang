@@ -1,19 +1,16 @@
 <mat-card>
-
+  <div class="announce mat-elevation-z8">
     <div class="example-header">
       <mat-form-field>
-        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="검색">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
       </mat-form-field>
     </div>
 
- <div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource" matSort>
 
-   <mat-accordion>
-   <mat-table [dataSource]="dataSource" matSort>
-
-       <ng-container matColumnDef="announceId">
-        <mat-header-cell *matHeaderCellDef mat-sort-header class="idCol"> ID </mat-header-cell>
-        <mat-cell *matCellDef="let element" class="idCol"> {{element.announceId}} </mat-cell>
+      <ng-container matColumnDef="announceId">
+        <mat-header-cell *matHeaderCellDef> id </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.announceId}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="title">
@@ -23,17 +20,13 @@
             <mat-expansion-panel-header>
               {{element.title}}
             </mat-expansion-panel-header>
-              {{element.content}}
+            {{element.body}}
           </mat-expansion-panel>
         </mat-cell>
       </ng-container>
 
-       <mat-header-row *matHeaderRowDef="announceColumns"></mat-header-row>
-      <mat-row *matRowDef="let element; columns: announceColumns;">
-      </mat-row>
+      <mat-header-row *matHeaderRowDef="announceColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: announceColumns;"></mat-row>
     </mat-table>
-
-    <mat-paginator [pageSizeOptions]="[5]"></mat-paginator>
-     </mat-accordion>
- </div>
+  </div>
 </mat-card>

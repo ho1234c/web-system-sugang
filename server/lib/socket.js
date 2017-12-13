@@ -18,7 +18,6 @@ module.exports = io => {
             const idx = userList.indexOf(user.displayname);
 
             if (idx > -1) userList.splice(idx, 1);
-
             io.emit('leave', userList);
         });
 
