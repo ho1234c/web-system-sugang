@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -8,7 +7,7 @@ import {Output, EventEmitter} from '@angular/core';
 })
 
 export class NavComponent {
-  //@Output() isLogin: EventEmitter<boolean> = new EventEmitter<boolean>();
+
   name: string;
   major: string;
   maximum_credit: number;

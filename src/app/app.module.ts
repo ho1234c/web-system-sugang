@@ -11,6 +11,7 @@ import { TableComponent} from './tableComponent/table.component';
 import { ModalComponent } from './modalComponent/modal.component';
 import { ChattingComponent } from './chatComponent/chatting.component';
 
+
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpService } from './http.service';
