@@ -69,7 +69,10 @@ router.post('/add/:userId', (req, res, next) => {
       })
     })
   });
+})
 
+router.get('/session', (req, res, next) => {
+  res.json(req.user);
 })
 
 module.exports = router;

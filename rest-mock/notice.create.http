@@ -2,6 +2,6 @@ POST http://localhost:3000/api/notice/create HTTP/1.1
 content-type: application/json
 
 {
-    "title": "test title",
-    "body": "test body"
+    "title": "test3 title",
+    "body": "test3 body"
 }

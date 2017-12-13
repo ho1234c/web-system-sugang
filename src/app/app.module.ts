@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';  
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { routing } from './app.routes';
@@ -34,7 +35,7 @@ import { JoinComponent } from './joinComponent/join.component';
     AppComponent, NavComponent, MainComponent, TableComponent, ChatComponent, ModalComponent, AnnounceComponent, SearchComponent, JoinComponent
   ],
   imports: [
-    BrowserModule,  FormsModule, routing,
+    BrowserModule,  FormsModule, routing, CommonModule,
     MatListModule, MatToolbarModule, MatGridListModule, MatInputModule, MatFormFieldModule, MatSelectModule, MatOptionModule, MatButtonModule,
     MatIconModule, MatMenuModule, MatAutocompleteModule, MatCardModule, MatDialogModule, MatProgressBarModule, MatProgressSpinnerModule, MatSliderModule,
     MatSnackBarModule, MatTooltipModule, MatButtonToggleModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatExpansionModule, MatNativeDateModule,

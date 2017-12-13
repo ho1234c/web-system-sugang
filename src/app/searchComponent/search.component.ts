@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { Subject } from '../subject/Subject';
 import { Input } from '@angular/compiler/src/core';
-import { MatTableDataSource } from '@angular/material';
+import { MatTableDataSource, MatSort } from '@angular/material';
 import { HttpService } from '../http.service';
 
 @Component({
@@ -14,16 +14,18 @@ export class SearchComponent {
   majorName: string[] = ['미디어', '전자공학', '교양', '소프트웨어'];
   selected: string;
   dataSource: MatTableDataSource<Subject>;
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(private httpService: HttpService) {
-    this.loadSubject();    
+    this.loadSubject();
   }
 
-  OnInit() {}
+  OnInit() { }
 
   loadSubject(): any {
     this.httpService.loadSubjectService().subscribe((result: any) => {
       this.dataSource = new MatTableDataSource(result);
+      this.dataSource.sort = this.sort;
     });
   }
 

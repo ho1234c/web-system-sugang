@@ -7,7 +7,7 @@
             <a mat-raised-button routerLink="main"> Main </a>
             <a mat-raised-button routerLink="table"> Time Table </a>
         </div>
-        <div class="info">
+        <div class="info" *ngIf="logOn">
             <span>이름 : {{name}} </span>
             <span class="spacer"></span>
             <span>학과 : {{major}} </span>
