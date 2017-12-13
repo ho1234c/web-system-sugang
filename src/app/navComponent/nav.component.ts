@@ -17,7 +17,7 @@ export class navComponent {
 
   isLogin(login: boolean) {
     this.logOn = login;
-    const { user } = JSON.parse(localStorage.getItem('currentUser'));
+    const user = JSON.parse(localStorage.getItem('currentUser'));
     this.name = user.displayName;
     this.maximum_credit = user.maximum_credit;
     this.grade = user.grade;
