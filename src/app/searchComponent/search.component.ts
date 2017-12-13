@@ -15,11 +15,11 @@ export class SearchComponent {
   selected: string;
   dataSource: MatTableDataSource<Subject>;
 
-  constructor(private httpService: HttpService) {}
-
-  OnInit() {
-    this.loadSubject();
+  constructor(private httpService: HttpService) {
+    this.loadSubject();    
   }
+
+  OnInit() {}
 
   loadSubject(): any {
     this.httpService.loadSubjectService().subscribe((result: any) => {

@@ -10,52 +10,52 @@
       </mat-form-field>
     </div>
 
-    <mat-table #table [dataSource]="dataSource">
+    <mat-table #table [dataSource]="dataSource" matSort>
 
       <ng-container matColumnDef="courseNumber">
-        <mat-header-cell *matHeaderCellDef> 과목코드 </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 과목코드 </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.courseNumber}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef> 강의명 </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 강의명 </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="credit">
-        <mat-header-cell *matHeaderCellDef> 학점 </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 학점 </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.credit}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="lectureTime">
-        <mat-header-cell *matHeaderCellDef> 강의시간 </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 강의시간 </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.lectureTime}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="lectureRoom">
-        <mat-header-cell *matHeaderCellDef> 강의실 </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 강의실 </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.lectureRoom}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="professor">
-        <mat-header-cell *matHeaderCellDef> 교수 </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 교수 </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.professor}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="seats">
-        <mat-header-cell *matHeaderCellDef> 여석 </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 여석 </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.seats}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="major">
-        <mat-header-cell *matHeaderCellDef> 전공 </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 전공 </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.major}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="join">
         <mat-header-cell *matHeaderCellDef> 신청 </mat-header-cell>
         <mat-cell *matCellDef="let element">
-          <input type="button" value="신청" (click)="addSubject(element._id)">
+          <button mat-button (click)="addSubject(element._id)">신청</button>
         </mat-cell>
       </ng-container>
 

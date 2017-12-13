@@ -13,3 +13,8 @@
 .mat-card {
   box-shadow: none;
 }
+
+mat-form-field {
+  width: 80%;
+  padding: 10px;
+}

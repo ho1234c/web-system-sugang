@@ -51,7 +51,7 @@ router.post('/login', (req, res, next) => {
 
 router.get('/logout', (req, res) => {
   req.logout();
-  res.sendStatus(200).send('logout success');
+  res.send('logout success');
 });
 
 router.post('/add/:userId', (req, res, next) => {
