@@ -1,5 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-import { subjects } from '../subject/mock.subject';
 import { Subject } from '../subject/Subject';
 import { Input } from '@angular/compiler/src/core';
 import { MatTableDataSource } from '@angular/material';
@@ -13,10 +12,8 @@ import { HttpService } from '../http.service';
 export class SearchComponent {
   majorColumns: string[] = ['courseNumber', 'name', 'credit', 'lectureTime', 'lectureRoom', 'professor', 'seats', 'major', 'join'];
   majorName: string[] = ['미디어', '전자공학', '교양', '소프트웨어'];
-  searchList: Subject[]; //검색 결과 list
   selected: string;
   dataSource: MatTableDataSource<Subject>;
-  // dataSource = new MatTableDataSource<Subject>(this.searchList);
 
   constructor(private httpService: HttpService) {}  
 
@@ -26,12 +23,15 @@ export class SearchComponent {
 
   loadSubject(): any {
     this.httpService.loadSubjectService().subscribe((result: any) => {
-      this.dataSource = new MatTableDataSource(result.subject);
+      this.dataSource = new MatTableDataSource(result);
     });
   }
 
-  register(courseNumber: string) {
-    //해당 강의 신청
+  addSubject(subjectId: string) {
+    console.log(subjectId);
+    this.httpService.addSubjectService(subjectId).subscribe((result: any) => {
+      window.alert('신청되었습니다.');
+    })
   }
 
   applyFilter(filterValue: string) {

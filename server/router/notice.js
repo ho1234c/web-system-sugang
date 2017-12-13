@@ -21,7 +21,6 @@ router.get('/fetch', (req, res, next) => {
       if(err) {
         return next(err);
       }
-      console.log(documents);
       res.json(documents);
     });
 });

@@ -1,4 +1,5 @@
 export class Subject {
+  _id: string;
   name: string;
   major: string;
   courseNumber: string;

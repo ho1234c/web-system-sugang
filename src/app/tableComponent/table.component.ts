@@ -1,6 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { HttpService } from '../http.service';
-import { subjects } from '../subject/mock.subject';
 import { Subject } from '../subject/Subject';
 import { DataSource } from '@angular/cdk/collections';
 import { Observable } from 'rxjs/Observable';
@@ -13,7 +12,6 @@ import { inputTable } from '../subject/inputTable';
 })
 
 export class tableComponent implements OnInit {
-
   mySubjectDBs1: Subject[];
   inputTableDB: inputTable[];
   tempParsing: string[];
@@ -30,11 +28,9 @@ export class tableComponent implements OnInit {
       'E(1500)', 'E(1530)', 'E(1600)', 'F(1630)', 'F(1700)', 'F(1730)', 'G(1800)', 'G(1830)', 'G(1900)'];
 
     this.time.forEach(el => {
-      console.log(el);
       const t = new inputTable(el, '', '', '', '', '');
       this.inputTableDB.push(t);
     });
-  console.log(this.inputTableDB);
   }
 
   f: boolean;

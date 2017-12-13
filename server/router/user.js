@@ -15,7 +15,7 @@ router.post('/create', (req, res, next) => {
 
   user.save(err => {
     console.log('test');
-    if(err) {
+    if (err) {
       return next(err);
     }
     res.send('success');
@@ -31,6 +31,7 @@ router.post('/login', (req, res, next) => {
       return res.status(400).json(info);
     }
     const userData = {
+      _id: user._id,
       email: user.email,
       displayName: user.displayName,
       subjects: user.subjects,
@@ -43,7 +44,7 @@ router.post('/login', (req, res, next) => {
       if (err) {
         return next(err);
       }
-      return res.json({ user: userData });
+      return res.json(userData);
     });
   })(req, res, next)
 });
@@ -61,7 +62,7 @@ router.post('/add/:userId', (req, res, next) => {
     Subject.findById(subjectId, (err, subject) => {
       user.subjects.push(subject);
       user.save(err => {
-        if(err) {
+        if (err) {
           return next(err);
         }
         res.send('success');

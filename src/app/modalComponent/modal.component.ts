@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, OnChanges, EventEmitter } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AuthenticationService} from '../loginService';
+import { AuthenticationService } from '../loginService';
 
 @Component({
   selector: 'app-modal',
@@ -33,36 +33,32 @@ export class modalComponent implements OnInit {
   email: string;
 
   constructor(private route: ActivatedRoute,
-              private router: Router,
-              private authenticationService: AuthenticationService) { }
+    private router: Router,
+    private authenticationService: AuthenticationService) { }
 
   ngOnInit() {
     // reset login status
     this.authenticationService.logout();
 
     // get return url from route parameters or default to '/'
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';}
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+  }
 
   login() {
-    this.loading = true;
-    this.authenticationService.login(this.id, this.pw)
+    this.authenticationService
+      .login(this.id, this.pw)
       .subscribe(
-        data => {
-          if (data) {
-            this.close();
-            this.isLogin.emit(true);
-          }
-          //this.router.navigate([this.returnUrl]);
-        },
-        error => {
-          this.loading = false;
-        });
+      data => {
+        this.close();
+        this.isLogin.emit(true);
+      },
+      error => {
+        console.log(error);
+      });
   }
 
   close() {
     this.visible = false;
     this.visibleChange.emit(this.visible);
   }
-
-
 }
