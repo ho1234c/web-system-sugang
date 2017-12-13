@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import { Subject } from '../subject/Subject';
 import { Input } from '@angular/compiler/src/core';
 import { MatTableDataSource } from '@angular/material';
@@ -14,10 +14,11 @@ export class SearchComponent {
   majorName: string[] = ['미디어', '전자공학', '교양', '소프트웨어'];
   selected: string;
   dataSource: MatTableDataSource<Subject>;
+  @Output() joinReq: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(private httpService: HttpService) {}  
+  constructor(private httpService: HttpService) {}
 
-  ngOnInit() {
+  OnInit() {
     this.loadSubject();
   }
 
@@ -28,10 +29,9 @@ export class SearchComponent {
   }
 
   addSubject(subjectId: string) {
-    console.log(subjectId);
     this.httpService.addSubjectService(subjectId).subscribe((result: any) => {
       window.alert('신청되었습니다.');
-    })
+    });
   }
 
   applyFilter(filterValue: string) {

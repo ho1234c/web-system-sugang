@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -6,7 +7,8 @@ import {Component} from '@angular/core';
   styleUrls: ['./nav.component.scss']
 })
 
-export class navComponent {
+export class NavComponent {
+  //@Output() isLogin: EventEmitter<boolean> = new EventEmitter<boolean>();
   name: string;
   major: string;
   maximum_credit: number;
@@ -15,7 +17,7 @@ export class navComponent {
   logOn = false;
   showDialog = false;
 
-  isLogin(login: boolean) {
+  islogin(login: boolean) {
     this.logOn = login;
     const user = JSON.parse(localStorage.getItem('currentUser'));
     this.name = user.displayName;

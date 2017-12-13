@@ -9,7 +9,7 @@
     "test:server": "./node_modules/.bin/mocha --reporter spec",
     "start:production": "node server.js",
     "build": "ng build",
-    "test": "ng test",
+    "test": "mocha test/*.js",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
