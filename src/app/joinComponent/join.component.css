@@ -4,9 +4,10 @@
   min-width: 500px;
 }
 
-.example-header {
-  min-height: 20px;
-  padding: 3px 2px 0;
+.join {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
 }
 
 .mat-form-field {
@@ -17,4 +18,8 @@
 .mat-table {
   overflow: auto;
   max-height: 500px;
+}
+
+.mat-card {
+  box-shadow: none;
 }

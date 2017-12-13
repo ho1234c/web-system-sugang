@@ -1,5 +1,4 @@
 import {Component, ViewChild} from '@angular/core';
-import { subjects } from '../subject/mock.subject';
 import { Subject } from '../subject/Subject';
 import {Input} from '@angular/compiler/src/core';
 import {MatTableDataSource} from '@angular/material';
@@ -10,7 +9,7 @@ import {MatTableDataSource} from '@angular/material';
   styleUrls: ['./join.component.css']
 })
 export class JoinComponent {
-  joinList = subjects;
+  joinList = [];
   @ViewChild('form') myform;
 
   displayedColumns = ['courseNumber', 'name', 'credit', 'lectureTime', 'lectureRoom', 'professor', 'seats', 'major', 'drop'];

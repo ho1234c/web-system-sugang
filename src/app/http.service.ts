@@ -4,33 +4,34 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from './subject/Subject';
 
-
 @Injectable()
 export class HttpService {
-// http 라는 변수에 HttpClient 형 변수가 의존성 주입된다.
-  constructor(private http: HttpClient) {  }
+  // http 라는 변수에 HttpClient 형 변수가 의존성 주입된다.
+  constructor(private http: HttpClient) { }
 
   loadNoticeService() {
     return this.http.get('/api/notice/fetch');
   }
+
   loadSubjectService() {
     return this.http.get('/api/subject/fetch');
   }
-  addSubjectService(element: Subject) {
-    return this.http.post('/api/subject/create' ,
-    {
-      name: element.name,
-      major: element.major,
-      courseNumber: element.courseNumber,
-      credit: element.credit,
-      time: element.time,
-      professor: element.professor,
-      lectureTime: element.lectureTime,
-      lectureRoom: element.lectureRoom,
-      isCyber: element.isCyber
-    });
+
+  addSubjectService(subjectId) {
+    const currentUser = localStorage.getItem('currentUser');
+    let user;
+
+    if (currentUser) {
+      user = JSON.parse(currentUser);
+    } else {
+      window.alert('please login!');
+      return;
+    }
+    console.log(user);
+    return this.http.post(`/api/user/add/${user._id}`, { subjectId });
   }
+
   removeSubjectService(_name: string) {
-    return this.http.delete('/api/subject/remove?request=' + _name);
+    return this.http.delete('/api/subject/remove' + _name);
   }
 }
