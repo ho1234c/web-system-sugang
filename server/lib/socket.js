@@ -1,28 +1,33 @@
 module.exports = io => {
-    const userList = [];
+    // const userList = [];
 
     io.on('connection', socket => {
-        let session = socket.request.session.passport;
-        let user = (typeof session !== 'undefined') ? ( session.user ) : "UserUnknown";
+        const unknownUser = {
+            displayName: '익명'
+        }
+        const session = socket.request.session;
 
-        // if(userList.indexOf(user.displayName) === -1){
+        let user = typeof session.passport.user === 'undefined' ? unknownUser : session.passport.user;
+
+        // if (userList.indexOf(user.displayName) === -1) {
         //     userList.push(user.displayName);
         // }
 
         // io.emit('join', userList);
 
-        // socket.on('client message', data => {
-        //   session = socket.request.session.passport;
-        //   user = (typeof session !== 'undefined') ? ( session.user ) : "UserUnknown";
-        //     io.emit('server message', { message : data.message , displayname : user.displayName });
-        // });
+        socket.on('client message', data => {
+            session.reload((session) => {
+                user = typeof socket.request.session.passport.user === 'undefined' ? unknownUser : socket.request.session.passport.user;
 
-        // socket.on('disconnect', () => {
-        //     const idx = userList.indexOf(user.displayName);
+                io.emit('server message', { message: data.message, displayname: user.displayName, session: session });
+            });
+        });
 
-        //     if (idx > -1) userList.splice(idx, 1);
-        //     io.emit('leave', userList);
-        // });
+        socket.on('disconnect', () => {
+            // const idx = userList.indexOf(user.displayName);
 
+            // if (idx > -1) userList.splice(idx, 1);
+            // io.emit('leave', userList);
+        });
     });
 };

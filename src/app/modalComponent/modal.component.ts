@@ -20,22 +20,18 @@ import { AuthenticationService } from '../authService';
   ]
 })
 export class ModalComponent implements OnInit {
+  constructor(private route: ActivatedRoute, private router: Router, private authenticationService: AuthenticationService) {}
+
   @Input() closable = true;
   @Input() visible: boolean;
   @Output() visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  loading = false;
-  returnUrl: string;
   error: string;
   id: string;
   pw: string;
   email: string;
 
-  constructor(private route: ActivatedRoute,
-    private router: Router,
-    private authenticationService: AuthenticationService) {}
-
-  ngOnInit() {}
+  ngOnInit() { }
 
   login() {
     this.authenticationService.login(this.id, this.pw).then((user) => {

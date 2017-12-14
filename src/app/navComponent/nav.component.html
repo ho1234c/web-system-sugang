@@ -8,13 +8,7 @@
             <a mat-raised-button routerLink="table"> Time Table </a>
         </div>
         <div class="info" *ngIf="user">
-            <span>이름 : {{user.name}} </span>
-            <span class="spacer"></span>
-            <span>학과 : {{user.major}} </span>
-            <span class="spacer"></span>
-            <span>학년 : {{user.grade}}학년</span>
-            <span class="spacer"></span>
-            <span>최대신청학점 : {{user.maximum_credit}}</span>
+            <span>{{user.displayName}} / {{user.major}}학과 / {{user.grade}}학년 / 최대신청학점 :{{user.maximum_credit}}</span>
         </div>
 
         <div class="auth">
@@ -22,17 +16,13 @@
                 <mat-icon>public</mat-icon>
             </button>
             <mat-menu #matmenu="matMenu">
-                <button mat-menu-item (click)="showDialog = 1" class="btn">
+                <button mat-menu-item *ngIf="!isLogin" (click)="showDialog = 1" class="btn">
                     <mat-icon>flag</mat-icon>
                     <span> login </span>
                 </button>
-                <button mat-menu-item (click)="logout()">
+                <button mat-menu-item *ngIf="isLogin" (click)="logout()">
                     <mat-icon>flag</mat-icon>
                     <span> logout </span>
-                </button>
-                <button mat-menu-item (click)="showDialog = 2" class="btn">
-                    <mat-icon>flag</mat-icon>
-                    <span> register </span>
                 </button>
             </mat-menu>
         </div>

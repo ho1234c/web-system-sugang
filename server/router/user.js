@@ -4,6 +4,7 @@ const router = express.Router();
 const User = require('../models/User');
 const Subject = require('../models/Subject');
 const passwordHash = require('../lib/passwordHash');
+const subjectValidate = require('../lib/subjectValidate');
 
 router.post('/create', (req, res, next) => {
   const { email, password, displayName } = req.body;
@@ -60,13 +61,17 @@ router.post('/add/:userId', (req, res, next) => {
 
   User.findById(userId, (err, user) => {
     Subject.findById(subjectId, (err, subject) => {
-      user.subjects.push(subject);
-      user.save(err => {
-        if (err) {
-          return next(err);
-        }
-        return res.json(user);
-      })
+      if(subjectValidate(user.subjects, subject)) {
+        user.subjects.push(subject);
+        user.save(err => {
+          if (err) {
+            return next(err);
+          }
+          return res.json(user);
+        })
+      } else {
+        return res.json({ error: 'DUPLICATE' })
+      }
     })
   });
 })
@@ -86,8 +91,11 @@ router.delete('/delete/:userId/:subjectId', (req, res, next) => {
 })
 
 router.get('/session', (req, res, next) => {
+  if(!req.user) {
+    return res.json(null);
+  }
   User.findById(req.user._id).populate('subjects').exec((err, user) => {
-    res.json(user);
+    return res.json(user);
   })
 })
 

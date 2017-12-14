@@ -1,22 +1,10 @@
-<mat-grid-list cols="2" rowHeight="450px">
-  <mat-grid-tile>
-    <mat-card>
-      <app-announce></app-announce>
-    </mat-card>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <mat-card>
-      <app-search></app-search>
-    </mat-card>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <mat-card>
-      <app-join></app-join>
-    </mat-card>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <mat-card>
-      <app-chatting></app-chatting>
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+<div>
+  <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
+    <app-announce fxFlex="50"></app-announce>
+    <app-search fxFlex="50"></app-search>
+  </div>
+  <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
+    <app-join fxFlex="50"></app-join>
+    <app-chatting fxFlex="50"></app-chatting>
+  </div>
+</div>

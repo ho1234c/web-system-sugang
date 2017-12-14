@@ -7,7 +7,7 @@
 }
 
 .announce {
-  height: 400px
+  height: 400px;
 }
 
 .mat-card {
@@ -17,4 +17,8 @@
 mat-form-field {
   width: 80%;
   padding: 10px;
+}
+
+.container {
+  padding: 20px;
 }

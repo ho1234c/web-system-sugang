@@ -34,6 +34,10 @@ export class SearchComponent {
   addSubject(subject: Subject) {
     const { user } = this.authenticationService;
 
+    if(!user) {
+      return window.alert('로그인이 필요합니다');
+    }
+
     this.subService.addSubject(subject._id).then((result: any) => {
       const newUser = user.addSubject(subject);
 
@@ -45,4 +49,4 @@ export class SearchComponent {
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue;
   }
-}
+} 

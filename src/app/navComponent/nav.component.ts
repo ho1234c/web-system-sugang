@@ -12,6 +12,7 @@ import { Observable } from 'rxjs/Observable';
 export class NavComponent {
   showDialog: boolean;
   user: User;
+  isLogin: boolean;
   _subscription;
 
   constructor(private authenticationService: AuthenticationService) {
@@ -19,6 +20,7 @@ export class NavComponent {
     this.user = this.authenticationService.user;
     this._subscription = authenticationService.userChange.subscribe((user: User) => { 
       this.user = user;
+      this.isLogin = !!user;
     });
   }
 

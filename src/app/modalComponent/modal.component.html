@@ -16,23 +16,4 @@
   <button *ngIf="closable" (click)="close()" aria-label="Close" class="dialog__close-btn">X</button>
 </div>
 
-<div [@dialog] *ngIf="visible == 2" class="dialog">
-  <div class="example-container">
-    <h1> Register </h1>
-    <mat-form-field>
-      <input matInput placeholder="ID 입력">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="PW 입력">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="EMAIL 입력">
-    </mat-form-field>
-    <div class="button-row">
-      <button mat-raised-button color="primary">Register</button>
-    </div>
-  </div>
-  <button *ngIf="closable" (click)="close()" aria-label="Close" class="dialog__close-btn">X</button>
-</div>
-
 <div *ngIf="visible" class="overlay" (click)="close()"></div>

@@ -17,3 +17,11 @@ mat-form-field {
 .mat-card {
   box-shadow: none;
 }
+
+.container {
+  padding: 20px;
+}
+
+.add-btn {
+  display: flex;
+}
