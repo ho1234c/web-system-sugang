@@ -39,6 +39,10 @@ export class SearchComponent {
     }
 
     this.subService.addSubject(subject._id).then((result: any) => {
+      if('error' in result) {
+        window.alert('시간표중복입니다.');
+        return;
+      }
       const newUser = user.addSubject(subject);
 
       subject.seats--;

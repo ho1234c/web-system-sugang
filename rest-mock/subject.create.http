@@ -8,7 +8,7 @@ content-type: application/json
     "credit": "4",
     "time": "5",
     "professor": "오상윤",
-    "lectureTime": "화C,수3,수4,금C",
+    "lectureTime": "화C,수B,금C",
     "lectureRoom": "팔309,팔328",
     "isCyber": "false",
     "seats": "30"
@@ -100,6 +100,24 @@ content-type: application/json
     "professor": "Yenewondim Sinshaw",
     "lectureTime": "월C,수C",
     "lectureRoom": "팔325",
+    "isCyber": "false",
+    "seats": "21"
+}
+
+###
+
+POST http://localhost:3000/api/subject/create HTTP/1.1
+content-type: application/json
+
+{
+    "name": "캡스톤디자인",
+    "major": "전자학과",
+    "courseNumber": "M014",
+    "credit": "3",
+    "time": "3",
+    "professor": "Yenewondim Sinshaw",
+    "lectureTime": "화C,금C",
+    "lectureRoom": "팔315",
     "isCyber": "false",
     "seats": "21"
 }
