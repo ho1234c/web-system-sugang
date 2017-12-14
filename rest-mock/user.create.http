@@ -1,8 +1,8 @@
-POST http://localhost:3000/api/user/create HTTP/1.1
+POST http://52.78.107.91/api/user/create HTTP/1.1
 content-type: application/json
 
 {
-    "email": "user",
-    "password": "user",
-    "displayName": "user"
+    "email": "ho1234c@gmail.com",
+    "password": "1234",
+    "displayName": "정종호"
 }
