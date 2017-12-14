@@ -1,17 +1,17 @@
 export class InputTable {
   time: string;
-  monday: string;
-  tuesday: string;
-  wednesday: string;
-  thursday: string;
-  friday: string;
+  mon: string;
+  tue: string;
+  wed: string;
+  thu: string;
+  fri: string;
 
-  constructor (time: string, monday: string, tuesday: string, wednesday: string, thursday: string, friday: string) {
+  constructor (time: string, mon: string, tue: string, wed: string, thu: string, fri: string) {
     this.time = time;
-    this.monday = monday;
-    this.tuesday = tuesday;
-    this.wednesday = wednesday;
-    this.tuesday = tuesday;
-    this.friday = friday;
+    this.mon = mon;
+    this.tue = tue;
+    this.wed = wed;
+    this.tue = tue;
+    this.fri = fri;
   }
 }

@@ -17,8 +17,15 @@ export class JoinComponent {
   displayedColumns = ['courseNumber', 'name', 'credit', 'lectureTime', 'lectureRoom', 'professor', 'seats', 'major', 'drop'];
   dataSource = new MatTableDataSource<Subject>(this.subjects);
 
-  constructor(private subService: SubService, private authenticationService: AuthenticationService) {
-    this._subscription = authenticationService.userChange.subscribe((user: User) => {
+  constructor(private subService: SubService, private authenticationService: AuthenticationService) {}
+
+  ngOnInit() {
+    if(this.authenticationService.user) {
+      this.subjects = this.authenticationService.user.subjects;
+      this.dataSource = new MatTableDataSource<Subject>(this.subjects);      
+    }
+
+    this._subscription = this.authenticationService.userChange.subscribe((user: User) => {
       if (user) {
         this.subjects = user.subjects
         this.dataSource = new MatTableDataSource<Subject>(this.subjects);

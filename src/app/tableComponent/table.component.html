@@ -1,38 +1,38 @@
 <div class="container">
   <div class="example-container mat-elevation-z8">
-    <mat-table #table [dataSource]="dataSource2">
+    <mat-table #table [dataSource]="dataSource">
 
       <ng-container matColumnDef="time">
         <mat-header-cell *matHeaderCellDef> 교시/요일 </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.time}} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="monday">
+      <ng-container matColumnDef="mon">
         <mat-header-cell *matHeaderCellDef> 월 </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.monday}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{element.mon}} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="tuesday">
+      <ng-container matColumnDef="tue">
         <mat-header-cell *matHeaderCellDef> 화 </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.tuesday}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{element.tue}} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="wednesday">
+      <ng-container matColumnDef="wed">
         <mat-header-cell *matHeaderCellDef> 수 </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.wednesday}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{element.wed}} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="thursday">
+      <ng-container matColumnDef="thu">
         <mat-header-cell *matHeaderCellDef> 목 </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.thursday}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{element.thu}} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="friday">
+      <ng-container matColumnDef="fri">
         <mat-header-cell *matHeaderCellDef> 금 </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.friday}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{element.fri}} </mat-cell>
       </ng-container>
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      <mat-header-row *matHeaderRowDef="day"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: day;"></mat-row>
 
     </mat-table>
   </div>

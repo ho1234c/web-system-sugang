@@ -59,7 +59,7 @@ router.post('/add/:userId', (req, res, next) => {
   const { userId } = req.params;
   const { subjectId } = req.body;
 
-  User.findById(userId, (err, user) => {
+  User.findById(userId).populate('subjects').exec((err, user) => {
     Subject.findById(subjectId, (err, subject) => {
       if(subjectValidate(user.subjects, subject)) {
         user.subjects.push(subject);
