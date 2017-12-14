@@ -1,40 +1,39 @@
-<div class="example-container mat-elevation-z8">
-  <mat-table #table [dataSource]="dataSource2">
+<div class="container">
+  <div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource2">
 
-    <ng-container matColumnDef="time">
-      <mat-header-cell *matHeaderCellDef> 교시/요일 </mat-header-cell>
-      <mat-cell *matCellDef="let element">  {{element.time}} </mat-cell>
-    </ng-container>
+      <ng-container matColumnDef="time">
+        <mat-header-cell *matHeaderCellDef> 교시/요일 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.time}} </mat-cell>
+      </ng-container>
 
-    <ng-container matColumnDef="monday">
-      <mat-header-cell *matHeaderCellDef> 월 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.monday}} </mat-cell>
-    </ng-container>
+      <ng-container matColumnDef="monday">
+        <mat-header-cell *matHeaderCellDef> 월 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.monday}} </mat-cell>
+      </ng-container>
 
-    <ng-container matColumnDef="tuesday">
-      <mat-header-cell *matHeaderCellDef> 화 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.tuesday}} </mat-cell>
-    </ng-container>
+      <ng-container matColumnDef="tuesday">
+        <mat-header-cell *matHeaderCellDef> 화 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.tuesday}} </mat-cell>
+      </ng-container>
 
-    <ng-container matColumnDef="wednesday">
-      <mat-header-cell *matHeaderCellDef> 수 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.wednesday}} </mat-cell>
-    </ng-container>
+      <ng-container matColumnDef="wednesday">
+        <mat-header-cell *matHeaderCellDef> 수 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.wednesday}} </mat-cell>
+      </ng-container>
 
-    <ng-container matColumnDef="thursday">
-      <mat-header-cell *matHeaderCellDef> 목 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.thursday}} </mat-cell>
-    </ng-container>
+      <ng-container matColumnDef="thursday">
+        <mat-header-cell *matHeaderCellDef> 목 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.thursday}} </mat-cell>
+      </ng-container>
 
-    <ng-container matColumnDef="friday">
-      <mat-header-cell *matHeaderCellDef> 금 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.friday}} </mat-cell>
-    </ng-container>
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row  *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      <ng-container matColumnDef="friday">
+        <mat-header-cell *matHeaderCellDef> 금 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.friday}} </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 
-  </mat-table>
+    </mat-table>
+  </div>
 </div>
-<!--<div *ngFor="let mySubjectDB1 of mySubjectDBs1">-->
-  <!--<span>{{mySubjectDB1.name}} {{mySubjectDB1.lectureRoom}}</span>-->
-<!--</div>-->
