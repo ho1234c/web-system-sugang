@@ -6,8 +6,8 @@ module.exports = io => {
             displayName: '익명'
         }
         const session = socket.request.session;
-        
-        let user = Object.keys(session.passport).length === 0 ? unknownUser : session.passport.user;
+
+        let user = 'passport' in session ? session.passport.user : unknownUser;
 
         // if (userList.indexOf(user.displayName) === -1) {
         //     userList.push(user.displayName);
@@ -17,7 +17,7 @@ module.exports = io => {
 
         socket.on('client message', data => {
             session.reload((session) => {
-                user = Object.keys(session.passport).length === 0 ? unknownUser : socket.request.session.passport.user;
+                user = 'passport' in session ? session.passport.user : unknownUser;
 
                 io.emit('server message', { message: data.message, displayname: user.displayName, session: session });
             });
