@@ -65,14 +65,30 @@ router.post('/add/:userId', (req, res, next) => {
         if (err) {
           return next(err);
         }
-        res.send('success');
+        return res.json(user);
       })
     })
   });
 })
 
+router.delete('/delete/:userId/:subjectId', (req, res, next) => {
+  const { userId, subjectId } = req.params;
+
+  User.findById(userId, (err, user) => {
+    user.subjects.pull(subjectId);
+    user.save(err => {
+      if (err) {
+        return next(err);
+      }
+      return res.json(user);
+    })
+  });
+})
+
 router.get('/session', (req, res, next) => {
-  res.json(req.user);
+  User.findById(req.user._id).populate('subjects').exec((err, user) => {
+    res.json(user);
+  })
 })
 
 module.exports = router;

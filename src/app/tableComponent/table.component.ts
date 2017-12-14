@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { HttpService } from '../http.service';
+import { SubService } from '../subService';
 import { Subject } from '../subject/Subject';
 import { DataSource } from '@angular/cdk/collections';
 import { Observable } from 'rxjs/Observable';
@@ -44,12 +44,12 @@ export class TableComponent implements OnInit {
     });
   }
 
-  constructor(private httpService: HttpService, private changeDetectorRefs: ChangeDetectorRef) {
+  constructor(private subService: SubService, private changeDetectorRefs: ChangeDetectorRef) {
     this.f = false;
   }
 
   loadSubject(): any {
-    this.httpService.loadSubjectService().subscribe(result => {
+    this.subService.loadSubject().then(result => {
       for (const i in result) {
         if (result.hasOwnProperty(i) != null) {
           this.mySubjectDBs1.push(result[i]);

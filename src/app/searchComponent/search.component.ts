@@ -1,8 +1,9 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { Subject } from '../subject/Subject';
 import { Input } from '@angular/compiler/src/core';
 import { MatTableDataSource, MatSort } from '@angular/material';
-import { HttpService } from '../http.service';
+import { SubService } from '../subService';
+import { AuthenticationService } from '../authService';
 
 @Component({
   selector: 'app-search',
@@ -14,27 +15,29 @@ export class SearchComponent {
   majorName: string[] = ['미디어', '전자공학', '교양', '소프트웨어'];
   selected: string;
   dataSource: MatTableDataSource<Subject>;
-<<<<<<< HEAD
-  @ViewChild(MatSort) sort: MatSort;
-=======
   @Output() joinReq: EventEmitter<boolean> = new EventEmitter<boolean>();
->>>>>>> origin/ksy
+  @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private httpService: HttpService) {
+  constructor(private subService: SubService, private authenticationService: AuthenticationService) {
     this.loadSubject();
   }
 
   OnInit() { }
 
-  loadSubject(): any {
-    this.httpService.loadSubjectService().subscribe((result: any) => {
+  loadSubject() {
+    this.subService.loadSubject().then((result: any) => {
       this.dataSource = new MatTableDataSource(result);
       this.dataSource.sort = this.sort;
     });
   }
 
-  addSubject(subjectId: string) {
-    this.httpService.addSubjectService(subjectId).subscribe((result: any) => {
+  addSubject(subject: Subject) {
+    const { user } = this.authenticationService;
+
+    this.subService.addSubject(subject._id).then((result: any) => {
+      const newUser = user.addSubject(subject);
+
+      this.authenticationService.change(newUser)
       window.alert('신청되었습니다.');
     });
   }

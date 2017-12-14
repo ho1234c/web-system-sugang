@@ -1,12 +1,12 @@
 <div [@dialog] *ngIf="visible == 1" class="dialog">
-  <div class="example-container">
-    <h1> Login </h1>
+  <div class="login-container">
+    <h2 mat-dialog-title>login</h2>
     <mat-form-field>
       <input matInput placeholder="ID 입력" [(ngModel)]="id">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="PW 입력" [(ngModel)]="pw">
+      <input matInput placeholder="PW 입력" [(ngModel)]="pw" type="password">
     </mat-form-field>
 
     <div class="button-row">

@@ -1,4 +1,7 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
+import { AuthenticationService } from '../authService';
+import { User } from '../User';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-nav',
@@ -7,26 +10,26 @@ import {Component} from '@angular/core';
 })
 
 export class NavComponent {
+  showDialog: boolean;
+  user: User;
+  _subscription;
 
-  name: string;
-  major: string;
-  maximum_credit: number;
-  grade: number;
-
-  logOn = false;
-  showDialog = false;
-
-  islogin(login: boolean) {
-    this.logOn = login;
-    const user = JSON.parse(localStorage.getItem('currentUser'));
-    this.name = user.displayName;
-    this.maximum_credit = user.maximum_credit;
-    this.grade = user.grade;
-    this.major = user.major;
+  constructor(private authenticationService: AuthenticationService) {
+    this.showDialog = false;
+    this.user = this.authenticationService.user;
+    this._subscription = authenticationService.userChange.subscribe((user: User) => { 
+      this.user = user;
+    });
   }
+
+  ngOnDestroy() {
+    //prevent memory leak when component destroyed
+     this._subscription.unsubscribe();
+   }
 
   logout() {
-    //this.authenticationService.logout();
+    this.authenticationService.logout().then(() => {
+      window.alert('success');
+    })
   }
-
 }

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as io from 'socket.io-client';
 
 const maxmsg = 7;
@@ -34,26 +34,26 @@ export class ChattingComponent implements OnInit {
     });
   }
 
-      sendMessage(msg) {
-        this.socket.emit('client message', {message: msg.value});
-      }
+  sendMessage(msg) {
+    this.socket.emit('client message', { message: msg.value });
+  }
 
-      sendMessageOnEnter($event, messagebox) {
-        if ($event.which === 13) {
-          this.sendMessage(messagebox);
-          messagebox.value = '';
-        }
-      }
-
-      addMessage(msg: string) {
-        if (document.getElementById('chatlog').childElementCount > (maxmsg - 2)) {
-          console.log(msg);
-          document.getElementById('chatlog').removeChild(document.getElementById('chatlog').firstChild);
-        }
-
-        let node;
-        node = document.createElement('p');
-        node.innerHTML = msg;
-        document.getElementById('chatlog').appendChild(node);
-      }
+  sendMessageOnEnter($event, messagebox) {
+    if ($event.which === 13) {
+      this.sendMessage(messagebox);
+      messagebox.value = '';
     }
+  }
+
+  addMessage(msg: string) {
+    if (document.getElementById('chatlog').childElementCount > (maxmsg - 2)) {
+      console.log(msg);
+      document.getElementById('chatlog').removeChild(document.getElementById('chatlog').firstChild);
+    }
+
+    let node;
+    node = document.createElement('p');
+    node.innerHTML = msg;
+    document.getElementById('chatlog').appendChild(node);
+  }
+}

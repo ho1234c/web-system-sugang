@@ -7,14 +7,14 @@
             <a mat-raised-button routerLink="main"> Main </a>
             <a mat-raised-button routerLink="table"> Time Table </a>
         </div>
-        <div class="info" *ngIf="logOn">
-            <span>이름 : {{name}} </span>
+        <div class="info" *ngIf="user">
+            <span>이름 : {{user.name}} </span>
             <span class="spacer"></span>
-            <span>학과 : {{major}} </span>
+            <span>학과 : {{user.major}} </span>
             <span class="spacer"></span>
-            <span>학년 : {{grade}}학년</span>
+            <span>학년 : {{user.grade}}학년</span>
             <span class="spacer"></span>
-            <span>최대신청학점 : {{maximum_credit}}</span>
+            <span>최대신청학점 : {{user.maximum_credit}}</span>
         </div>
 
         <div class="auth">
@@ -24,15 +24,15 @@
             <mat-menu #matmenu="matMenu">
                 <button mat-menu-item (click)="showDialog = 1" class="btn">
                     <mat-icon>flag</mat-icon>
-                    <span> Log IN </span>
+                    <span> login </span>
                 </button>
-                <button mat-menu-item>
+                <button mat-menu-item (click)="logout()">
                     <mat-icon>flag</mat-icon>
-                    <span> Log OUT </span>
+                    <span> logout </span>
                 </button>
                 <button mat-menu-item (click)="showDialog = 2" class="btn">
                     <mat-icon>flag</mat-icon>
-                    <span> Register </span>
+                    <span> register </span>
                 </button>
             </mat-menu>
         </div>
@@ -40,4 +40,4 @@
 </header>
 
 
-<app-modal [(visible)]="showDialog" (isLogin)="islogin($event)"></app-modal>
+<app-modal [(visible)]="showDialog"></app-modal>

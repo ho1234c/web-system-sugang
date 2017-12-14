@@ -1,9 +1,8 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { Input } from '@angular/compiler/src/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
-import { AnnounceSet } from '../mock.announce';
 import { Announce } from '../announce';
-import { HttpService } from '../http.service';
+import { SubService } from '../subService';
 
 @Component({
   selector: 'app-announce',
@@ -14,14 +13,14 @@ export class AnnounceComponent implements OnInit {
   dataSource: MatTableDataSource<Announce>;
   announceColumns = ['announceId', 'title'];
 
-  constructor(private httpService: HttpService) {}
+  constructor(private subService: SubService) {}
 
   ngOnInit() {
     this.loadNotice();
   }
 
   loadNotice(): any {
-    this.httpService.loadNoticeService().subscribe((result: Array<Announce>) => {
+    this.subService.loadNotice().then((result: Array<Announce>) => {
       result.map((el, idx) => el.announceId = idx);
       this.dataSource = new MatTableDataSource(result);
     });

@@ -1,6 +1,9 @@
-import {Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Subject } from '../subject/Subject';
-import {MatTableDataSource} from '@angular/material';
+import { MatTableDataSource } from '@angular/material';
+import { AuthenticationService } from '../authService';
+import { SubService } from '../subService';
+import { User } from '../User';
 
 @Component({
   selector: 'app-join',
@@ -8,12 +11,31 @@ import {MatTableDataSource} from '@angular/material';
   styleUrls: ['./join.component.css']
 })
 export class JoinComponent {
-  joinList = JSON.parse(localStorage.getItem('currentUser')).subjects;
+  subjects: Subject[]
+  _subscription;
 
   displayedColumns = ['courseNumber', 'name', 'credit', 'lectureTime', 'lectureRoom', 'professor', 'seats', 'major', 'drop'];
-  dataSource = new MatTableDataSource<Subject>(this.joinList);
+  dataSource = new MatTableDataSource<Subject>(this.subjects);
 
-  drop(courseNumber: string) {
-    // 해당 강의 취소
+  constructor(private subService: SubService, private authenticationService: AuthenticationService) {
+    this._subscription = authenticationService.userChange.subscribe((user: User) => {
+      if (user) {
+        this.subjects = user.subjects
+        this.dataSource = new MatTableDataSource<Subject>(this.subjects);
+      } else {
+        this.dataSource = null;
+      }
+    });
+  }
+
+  drop(subject: Subject) {
+    const { user } = this.authenticationService;
+
+    this.subService.removeSubject(subject._id).then((result: any) => {
+      const newUser = user.removeSubject(subject);
+
+      this.authenticationService.change(newUser)
+      window.alert('삭제되었습니다.');
+    });
   }
 }
