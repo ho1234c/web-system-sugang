@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import moduleName from 'dotenv';
 
 @Component({
   selector: 'app-main',
@@ -6,8 +7,6 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 
-export class MainComponent {
-
-}
+export class MainComponent {}
 
 

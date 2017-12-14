@@ -8,7 +8,8 @@
     "start:server": "nodemon server.js",
     "test:server": "./node_modules/.bin/mocha --reporter spec",
     "start:production": "node server.js",
-    "build": "ng build",
+    "build": "ng build --env=prod",
+    "build:dev": "ng build --watch",
     "test": "mocha test/*.js",
     "lint": "ng lint",
     "e2e": "ng e2e"

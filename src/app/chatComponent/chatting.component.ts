@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../../environments/environment';
 import * as io from 'socket.io-client';
 
 const maxmsg = 7;
@@ -10,7 +11,7 @@ const maxmsg = 7;
 })
 
 export class ChattingComponent implements OnInit {
-  url = 'http://localhost:3000';
+  url = environment.host;
   socket = io(this.url);
   userList: object;
 
