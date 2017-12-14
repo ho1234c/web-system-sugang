@@ -13,7 +13,7 @@ ENV NODE_ENV production
 
 # angular build
 RUN npm install --unsafe-perm -g @angular/cli
-RUN npm run build --production
+RUN npm run build
 
 # open port
 EXPOSE 3000
