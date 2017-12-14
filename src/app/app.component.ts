@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +7,4 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  name = '정의원';
-  department = '소프트웨어';
-  grade = 3;
-  maxPoint = 21;
 }

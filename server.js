@@ -35,6 +35,7 @@ const connectMongo = require('connect-mongo');
 const MongoStore = connectMongo(session);
 
 const sessionMiddleWare = session({
+
     secret: 'jongho',
     resave: false,
     saveUninitialized: true,
@@ -53,6 +54,7 @@ app.use(sessionMiddleWare);
 const passportConfig = require('./server/lib/passport');
 
 passportConfig(app);
+
 // Set api routes
 const user = require('./server/router/user');
 const subject = require('./server/router/subject');

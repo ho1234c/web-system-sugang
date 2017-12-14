@@ -9,8 +9,9 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './navComponent/nav.component';
 import { MainComponent} from './mainComponent/main.component';
 import { TableComponent} from './tableComponent/table.component';
-import { ChatComponent } from './chatComponent/chat.component';
 import { ModalComponent } from './modalComponent/modal.component';
+import { ChattingComponent } from './chatComponent/chatting.component';
+
 
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
@@ -32,7 +33,7 @@ import { JoinComponent } from './joinComponent/join.component';
 
 @NgModule({
   declarations: [
-    AppComponent, NavComponent, MainComponent, TableComponent, ChatComponent, ModalComponent, AnnounceComponent, SearchComponent, JoinComponent
+    AppComponent, NavComponent, MainComponent, TableComponent, ModalComponent, AnnounceComponent, SearchComponent, JoinComponent, ChattingComponent
   ],
   imports: [
     BrowserModule,  FormsModule, routing, CommonModule,

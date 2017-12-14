@@ -7,6 +7,7 @@ import {Component} from '@angular/core';
 })
 
 export class NavComponent {
+
   name: string;
   major: string;
   maximum_credit: number;
@@ -15,7 +16,7 @@ export class NavComponent {
   logOn = false;
   showDialog = false;
 
-  isLogin(login: boolean) {
+  islogin(login: boolean) {
     this.logOn = login;
     const user = JSON.parse(localStorage.getItem('currentUser'));
     this.name = user.displayName;

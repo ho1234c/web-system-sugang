@@ -1,6 +1,5 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { Subject } from '../subject/Subject';
-import {Input} from '@angular/compiler/src/core';
 import {MatTableDataSource} from '@angular/material';
 
 @Component({
@@ -9,13 +8,10 @@ import {MatTableDataSource} from '@angular/material';
   styleUrls: ['./join.component.css']
 })
 export class JoinComponent {
-  joinList = [];
-  @ViewChild('form') myform;
+  joinList = JSON.parse(localStorage.getItem('currentUser')).subjects;
+
   displayedColumns = ['courseNumber', 'name', 'credit', 'lectureTime', 'lectureRoom', 'professor', 'seats', 'major', 'drop'];
-
   dataSource = new MatTableDataSource<Subject>(this.joinList);
-
-  // this.myform.resetForm();
 
   drop(courseNumber: string) {
     // 해당 강의 취소

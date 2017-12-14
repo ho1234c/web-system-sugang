@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import { Subject } from '../subject/Subject';
 import { Input } from '@angular/compiler/src/core';
 import { MatTableDataSource, MatSort } from '@angular/material';
@@ -14,7 +14,11 @@ export class SearchComponent {
   majorName: string[] = ['미디어', '전자공학', '교양', '소프트웨어'];
   selected: string;
   dataSource: MatTableDataSource<Subject>;
+<<<<<<< HEAD
   @ViewChild(MatSort) sort: MatSort;
+=======
+  @Output() joinReq: EventEmitter<boolean> = new EventEmitter<boolean>();
+>>>>>>> origin/ksy
 
   constructor(private httpService: HttpService) {
     this.loadSubject();
