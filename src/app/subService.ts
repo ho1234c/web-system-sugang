@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from './subject/Subject';
-import { Announce } from './Announce';
+import { Announce } from './announce';
 import { AuthenticationService } from './authService';
 
 @Injectable()
