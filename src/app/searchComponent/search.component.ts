@@ -41,6 +41,7 @@ export class SearchComponent {
     this.subService.addSubject(subject._id).then((result: any) => {
       const newUser = user.addSubject(subject);
 
+      subject.seats--;
       this.authenticationService.change(newUser)
       window.alert('신청되었습니다.');
     });

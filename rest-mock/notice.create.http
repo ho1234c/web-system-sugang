@@ -1,7 +1,27 @@
-POST http://localhost:3000/api/notice/create HTTP/1.1
+POST http://52.78.107.91/api/notice/create HTTP/1.1
 content-type: application/json
 
 {
-    "title": "test3 title",
-    "body": "test3 body"
+    "title": "이거 안읽으면 졸업 못해요",
+    "body": "읽어도 못함"
+}
+
+###
+
+POST http://52.78.107.91/api/notice/create HTTP/1.1
+content-type: application/json
+
+{
+    "title": "이거 안읽으면 스팸문자 계속 보낼거임",
+    "body": "오늘 축구합니다! 응원하세요!"
+}
+
+###
+
+POST http://52.78.107.91/api/notice/create HTTP/1.1
+content-type: application/json
+
+{
+    "title": "이클래스 지원이 중단됩니다",
+    "body": "그래.. 플래시로 만든건 이제 그만써야지"
 }

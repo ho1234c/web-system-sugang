@@ -61,8 +61,9 @@ router.post('/add/:userId', (req, res, next) => {
 
   User.findById(userId).populate('subjects').exec((err, user) => {
     Subject.findById(subjectId, (err, subject) => {
-      if(subjectValidate(user.subjects, subject)) {
+      if (subjectValidate(user.subjects, subject)) {
         user.subjects.push(subject);
+        user.seats = user.seats - 1;
         user.save(err => {
           if (err) {
             return next(err);
@@ -80,18 +81,23 @@ router.delete('/delete/:userId/:subjectId', (req, res, next) => {
   const { userId, subjectId } = req.params;
 
   User.findById(userId, (err, user) => {
-    user.subjects.pull(subjectId);
-    user.save(err => {
-      if (err) {
-        return next(err);
-      }
-      return res.json(user);
+    Subject.findById(subjectId, (err, subject) => {
+      subject.seats = subject.seats + 1;
+      subject.save(err => {
+        user.subjects.pull(subjectId);
+        user.save(err => {
+          if (err) {
+            return next(err);
+          }
+          return res.json(user);
+        })
+      })
     })
   });
 })
 
 router.get('/session', (req, res, next) => {
-  if(!req.user) {
+  if (!req.user) {
     return res.json(null);
   }
   User.findById(req.user._id).populate('subjects').exec((err, user) => {

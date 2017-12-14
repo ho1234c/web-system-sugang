@@ -40,7 +40,7 @@ export class JoinComponent {
 
     this.subService.removeSubject(subject._id).then((result: any) => {
       const newUser = user.removeSubject(subject);
-
+      subject.seats++;      
       this.authenticationService.change(newUser)
       window.alert('삭제되었습니다.');
     });

@@ -1,4 +1,4 @@
-POST http://52.78.107.91/api/subject/create HTTP/1.1
+POST http://localhost:3000/api/subject/create HTTP/1.1
 content-type: application/json
 
 {
@@ -16,7 +16,7 @@ content-type: application/json
 
 ###
 
-POST http://52.78.107.91/api/subject/create HTTP/1.1
+POST http://localhost:3000/api/subject/create HTTP/1.1
 content-type: application/json
 
 {
@@ -30,4 +30,76 @@ content-type: application/json
     "lectureRoom": "성105",
     "isCyber": "false",
     "seats": "42"
+}
+
+###
+
+POST http://localhost:3000/api/subject/create HTTP/1.1
+content-type: application/json
+
+{
+    "name": "수학이란 무엇인가",
+    "major": "교양",
+    "courseNumber": "X004",
+    "credit": "3",
+    "time": "3",
+    "professor": "전영목",
+    "lectureTime": "월B,목B",
+    "lectureRoom": "원251",
+    "isCyber": "false",
+    "seats": "32"
+}
+
+###
+
+POST http://localhost:3000/api/subject/create HTTP/1.1
+content-type: application/json
+
+{
+    "name": "컴퓨터 네트워크",
+    "major": "소프트웨어학과",
+    "courseNumber": "F022",
+    "credit": "3",
+    "time": "3",
+    "professor": "노병희",
+    "lectureTime": "화B,목A",
+    "lectureRoom": "팔309",
+    "isCyber": "false",
+    "seats": "22"
+}
+
+###
+
+POST http://localhost:3000/api/subject/create HTTP/1.1
+content-type: application/json
+
+{
+    "name": "UX디자인",
+    "major": "미디어학과",
+    "courseNumber": "M024",
+    "credit": "3",
+    "time": "3",
+    "professor": "이주엽",
+    "lectureTime": "화D,목C",
+    "lectureRoom": "산421",
+    "isCyber": "false",
+    "seats": "51"
+}
+
+###
+
+POST http://localhost:3000/api/subject/create HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Algorithm",
+    "major": "미디어학과",
+    "courseNumber": "M024",
+    "credit": "3",
+    "time": "3",
+    "professor": "Yenewondim Sinshaw",
+    "lectureTime": "월C,수C",
+    "lectureRoom": "팔325",
+    "isCyber": "false",
+    "seats": "21"
 }
