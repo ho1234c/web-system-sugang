@@ -16,8 +16,8 @@ router.get('/fetch', (req, res, next) => {
 
 // create subject
 router.post('/create', (req, res, next) => {
-  const { name, major, courseNumber, credit, time, professor, lectureTime, lectureRoom, isCyber, created_at } = req.body;
-  const subject = new Subject({ name, major, courseNumber, credit, time, professor, lectureTime, lectureRoom, isCyber, created_at });
+  const { name, major, courseNumber, credit, time, professor, lectureTime, lectureRoom, isCyber, created_at, seats } = req.body;
+  const subject = new Subject({ name, major, courseNumber, credit, time, professor, lectureTime, lectureRoom, isCyber, created_at, seats });
 
   subject.save(err => {
     if(err) {

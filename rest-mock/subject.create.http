@@ -1,4 +1,4 @@
-POST http://localhost:3000/api/subject/create HTTP/1.1
+POST http://52.78.107.91/api/subject/create HTTP/1.1
 content-type: application/json
 
 {
@@ -10,12 +10,13 @@ content-type: application/json
     "professor": "오상윤",
     "lectureTime": "화C,수3,수4,금C",
     "lectureRoom": "팔309,팔328",
-    "isCyber": "false"
+    "isCyber": "false",
+    "seats": "30"
 }
 
 ###
 
-POST http://localhost:3000/api/subject/create HTTP/1.1
+POST http://52.78.107.91/api/subject/create HTTP/1.1
 content-type: application/json
 
 {
@@ -27,5 +28,6 @@ content-type: application/json
     "professor": "김세나",
     "lectureTime": "수D,금D",
     "lectureRoom": "성105",
-    "isCyber": "false"
+    "isCyber": "false",
+    "seats": "42"
 }
