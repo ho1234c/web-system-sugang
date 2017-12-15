@@ -13,21 +13,16 @@ const maxmsg = 7;
 })
 
 export class ChattingComponent implements OnInit {
-  constructor(private authenticationService: AuthenticationService) {}
-  url = environment.host;
-  socket = io(this.url);
-  userList: object;
-  displayName: string = '익명';
-  _subscription;
+  constructor(private authenticationService: AuthenticationService) {
+    this.socket = io(this.url);
 
-  ngOnInit() {
     if(this.authenticationService.user) {
-      this.displayName = this.authenticationService.user.displayName;
+      this.displayName = authenticationService.user.displayName;
     }
 
-    this._subscription = this.authenticationService.userChange.subscribe((user: User) => {
+    this._subscription = authenticationService.userChange.subscribe((user: User) => {
       if (user) {
-        this.displayName = this.authenticationService.user.displayName;
+        this.displayName = authenticationService.user.displayName;
       } else {
         this.displayName = '익명';
       }
@@ -49,6 +44,15 @@ export class ChattingComponent implements OnInit {
     this.socket.on('server message', (msg) => {
       this.addMessage(this.displayName + ' : ' + msg.message);
     });
+  }
+  url = environment.host;
+  socket = null;
+  userList: object;
+  displayName: string = '익명';
+  _subscription;
+
+  ngOnInit() {
+    
   }
 
   sendMessage(msg) {
@@ -73,4 +77,9 @@ export class ChattingComponent implements OnInit {
     node.innerHTML = msg;
     document.getElementById('chatlog').appendChild(node);
   }
+
+  ngOnDestroy() {
+    this.socket.disconnect();
+    this._subscription.unsubscribe();
+   }
 }
