@@ -31,10 +31,16 @@ export class ChattingComponent implements OnInit {
     this.socket.on('connection', () => {
       console.log('connect success');
       this.socket.on('join', function (data) {
-        this.userList = data.json();
-        console.log('join');
+        // this.userList = data.json();
+        
       });
     });
+
+    this.socket.on('conn', (data) => {
+      if(!this.authenticationService.user) {
+        this.displayName += data.count
+      }
+    })
 
     this.socket.on('leave', function (data) {
       this.userList = data.json();
@@ -42,7 +48,7 @@ export class ChattingComponent implements OnInit {
     });
 
     this.socket.on('server message', (msg) => {
-      this.addMessage(this.displayName + ' : ' + msg.message);
+      this.addMessage(msg.displayName + ' : ' + msg.message);
     });
   }
   url = environment.host;
@@ -56,7 +62,7 @@ export class ChattingComponent implements OnInit {
   }
 
   sendMessage(msg) {
-    this.socket.emit('client message', { message: msg.value });
+    this.socket.emit('client message', { message: msg.value, displayName: this.displayName });
   }
 
   sendMessageOnEnter($event, messagebox) {
@@ -68,7 +74,6 @@ export class ChattingComponent implements OnInit {
 
   addMessage(msg: string) {
     if (document.getElementById('chatlog').childElementCount > (maxmsg - 2)) {
-      console.log(msg);
       document.getElementById('chatlog').removeChild(document.getElementById('chatlog').firstChild);
     }
 

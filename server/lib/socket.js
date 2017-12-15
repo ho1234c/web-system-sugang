@@ -1,14 +1,8 @@
 module.exports = io => {
-    // const userList = [];
-
     io.on('connection', socket => {
-        const unknownUser = {
-            displayName: '익명'
-        }
         const session = socket.request.session;
 
-        let user = 'passport' in session ? session.passport.user : unknownUser;
-
+        io.emit('conn', { count: Math.floor(Math.random() * 100000) });
         // if (userList.indexOf(user.displayName) === -1) {
         //     userList.push(user.displayName);
         // }
@@ -17,7 +11,7 @@ module.exports = io => {
 
         socket.on('client message', data => {
             session.reload(() => {
-                io.emit('server message', { message: data.message });
+                io.emit('server message', { message: data.message, displayName: data.displayName });
             });
         });
 
