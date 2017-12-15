@@ -16,10 +16,8 @@ module.exports = io => {
         // io.emit('join', userList);
 
         socket.on('client message', data => {
-            session.reload((session) => {
-                user = 'passport' in session ? session.passport.user : unknownUser;
-
-                io.emit('server message', { message: data.message, displayname: user.displayName, session: session });
+            session.reload(() => {
+                io.emit('server message', { message: data.message });
             });
         });
 

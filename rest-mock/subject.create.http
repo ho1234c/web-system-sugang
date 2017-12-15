@@ -1,4 +1,4 @@
-POST http://localhost:3000/api/subject/create HTTP/1.1
+POST http://52.78.107.91/api/subject/create HTTP/1.1
 content-type: application/json
 
 {
@@ -16,7 +16,7 @@ content-type: application/json
 
 ###
 
-POST http://localhost:3000/api/subject/create HTTP/1.1
+POST http://52.78.107.91/api/subject/create HTTP/1.1
 content-type: application/json
 
 {
@@ -34,7 +34,7 @@ content-type: application/json
 
 ###
 
-POST http://localhost:3000/api/subject/create HTTP/1.1
+POST http://52.78.107.91/api/subject/create HTTP/1.1
 content-type: application/json
 
 {
@@ -52,7 +52,7 @@ content-type: application/json
 
 ###
 
-POST http://localhost:3000/api/subject/create HTTP/1.1
+POST http://52.78.107.91/api/subject/create HTTP/1.1
 content-type: application/json
 
 {
@@ -70,7 +70,7 @@ content-type: application/json
 
 ###
 
-POST http://localhost:3000/api/subject/create HTTP/1.1
+POST http://52.78.107.91/api/subject/create HTTP/1.1
 content-type: application/json
 
 {
@@ -88,7 +88,7 @@ content-type: application/json
 
 ###
 
-POST http://localhost:3000/api/subject/create HTTP/1.1
+POST http://52.78.107.91/api/subject/create HTTP/1.1
 content-type: application/json
 
 {
@@ -106,7 +106,7 @@ content-type: application/json
 
 ###
 
-POST http://localhost:3000/api/subject/create HTTP/1.1
+POST http://52.78.107.91/api/subject/create HTTP/1.1
 content-type: application/json
 
 {
@@ -120,4 +120,22 @@ content-type: application/json
     "lectureRoom": "팔315",
     "isCyber": "false",
     "seats": "21"
+}
+
+###
+
+POST http://52.78.107.91/api/subject/create HTTP/1.1
+content-type: application/json
+
+{
+    "name": "객체지향프로그래밍",
+    "major": "미디어학과",
+    "courseNumber": "C014",
+    "credit": "3",
+    "time": "3",
+    "professor": "경민호",
+    "lectureTime": "월D,금C",
+    "lectureRoom": "산419",
+    "isCyber": "false",
+    "seats": "53"
 }

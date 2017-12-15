@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from '../../environments/environment';
 import * as io from 'socket.io-client';
+import { AuthenticationService } from '../authService';
+import { environment } from '../../environments/environment';
+import { User } from '../User';
 
 const maxmsg = 7;
 
@@ -11,11 +13,26 @@ const maxmsg = 7;
 })
 
 export class ChattingComponent implements OnInit {
+  constructor(private authenticationService: AuthenticationService) {}
   url = environment.host;
   socket = io(this.url);
   userList: object;
+  displayName: string = '익명';
+  _subscription;
 
   ngOnInit() {
+    if(this.authenticationService.user) {
+      this.displayName = this.authenticationService.user.displayName;
+    }
+
+    this._subscription = this.authenticationService.userChange.subscribe((user: User) => {
+      if (user) {
+        this.displayName = this.authenticationService.user.displayName;
+      } else {
+        this.displayName = '익명';
+      }
+    });
+
     this.socket.on('connection', () => {
       console.log('connect success');
       this.socket.on('join', function (data) {
@@ -30,8 +47,7 @@ export class ChattingComponent implements OnInit {
     });
 
     this.socket.on('server message', (msg) => {
-      const name = msg.displayname ? msg.displayname : '익명';
-      this.addMessage(name + ' : ' + msg.message);
+      this.addMessage(this.displayName + ' : ' + msg.message);
     });
   }
 
